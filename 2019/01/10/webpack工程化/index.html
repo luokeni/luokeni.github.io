@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>webpack使用总结 | 此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一 什么是模块化当js的代码量越来越大的时候，没有模块化就是一个缺陷。 直白的说：就是打包。弥补ES5没有模块化的缺陷。 不用模块化：  可读性很差 函数之间有关联性，改变一个，其他的也要变 便于开发（每个人开发的时候把自己的可以防止冲突，通过暴露一个方法就可以） script标签多的时候，会引起性能问题 作用域问题，会共享全局作用域，可能会污染全局变量  1.1 模块化第一步IIFE ,立即执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack使用总结">
+<meta property="og:url" content="http://yoursite.com/2019/01/10/webpack工程化/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="一 什么是模块化当js的代码量越来越大的时候，没有模块化就是一个缺陷。 直白的说：就是打包。弥补ES5没有模块化的缺陷。 不用模块化：  可读性很差 函数之间有关联性，改变一个，其他的也要变 便于开发（每个人开发的时候把自己的可以防止冲突，通过暴露一个方法就可以） script标签多的时候，会引起性能问题 作用域问题，会共享全局作用域，可能会污染全局变量  1.1 模块化第一步IIFE ,立即执行">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-23T14:05:08.311Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack使用总结">
+<meta name="twitter:description" content="一 什么是模块化当js的代码量越来越大的时候，没有模块化就是一个缺陷。 直白的说：就是打包。弥补ES5没有模块化的缺陷。 不用模块化：  可读性很差 函数之间有关联性，改变一个，其他的也要变 便于开发（每个人开发的时候把自己的可以防止冲突，通过暴露一个方法就可以） script标签多的时候，会引起性能问题 作用域问题，会共享全局作用域，可能会污染全局变量  1.1 模块化第一步IIFE ,立即执行">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-webpack工程化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/10/webpack工程化/" class="article-date">
+  <time datetime="2019-01-10T08:28:39.000Z" itemprop="datePublished">2019-01-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/webpack使用总结/">webpack使用总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack使用总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-什么是模块化"><a href="#一-什么是模块化" class="headerlink" title="一 什么是模块化"></a>一 什么是模块化</h1><p>当js的代码量越来越大的时候，没有模块化就是一个缺陷。</p>
+<p>直白的说：就是打包。弥补ES5没有模块化的缺陷。</p>
+<p>不用模块化：</p>
+<ol>
+<li>可读性很差</li>
+<li>函数之间有关联性，改变一个，其他的也要变</li>
+<li>便于开发（每个人开发的时候把自己的可以防止冲突，通过暴露一个方法就可以）</li>
+<li>script标签多的时候，会引起性能问题</li>
+<li>作用域问题，会共享全局作用域，可能会污染全局变量</li>
+</ol>
+<h2 id="1-1-模块化第一步"><a href="#1-1-模块化第一步" class="headerlink" title="1.1 模块化第一步"></a>1.1 模块化第一步</h2><p>IIFE ,立即执行函数。(将函数包裹起来，通过window给暴露出去)</p>
+<p>缺点：引入依赖的问题</p>
+<p>解决办法：gulp grunt等工具</p>
+<p>问:1：我们修改了一个文件，可能就打破了依赖。</p>
+<p>问题2：Dead Code</p>
+<h2 id="1-2-模块化第二步"><a href="#1-2-模块化第二步" class="headerlink" title="1.2 模块化第二步"></a>1.2 模块化第二步</h2><p>Node  （只能在服务端，浏览器尚未统一）</p>
+<p>commonJS语法（导入和导出语法）</p>
+<ol>
+<li>入口文件（mian.js）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;文件&quot;)</span><br></pre></td></tr></table></figure>
+<pre><code>在node环境中运行
+</code></pre><ol start="2">
+<li>导出</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = 函数或变量等</span><br></pre></td></tr></table></figure>
+<p>问题：没有浏览器支持 且无法直接把main.js文件直接引入到HTML中（不识别require语法）</p>
+<p>解决办法：打包工具browerify（所有的js文件是放在一起的，那么用户不需要用就不需要加载，但是这些按需加载都被打包到一块，就会导致加载很慢）</p>
+<p>问题：commonJS语法是静态的</p>
+<p>webpack就能够很好的解决按需加载，不需要用就不用加载出来。</p>
+<h2 id="1-3-模块化第三步"><a href="#1-3-模块化第三步" class="headerlink" title="1.3 模块化第三步"></a>1.3 模块化第三步</h2><p>异步加载规范</p>
+<pre><code>AMD   Require.js
+
+CMD   Sea.js
+</code></pre><p>问题：太动态了（打包出来的膨胀）</p>
+<h2 id="1-4-解决方案：Webpack"><a href="#1-4-解决方案：Webpack" class="headerlink" title="1.4 解决方案：Webpack"></a>1.4 解决方案：Webpack</h2><p>任意模块化的语法都支持（js，css，sass，图片）</p>
+<p>按需加载  异步打包</p>
+<p>异步加载</p>
+<h1 id="二-webpack命令"><a href="#二-webpack命令" class="headerlink" title="二 webpack命令"></a>二 webpack命令</h1><h2 id="2-1-命令"><a href="#2-1-命令" class="headerlink" title="2.1 命令"></a>2.1 命令</h2><p>1.安装环境基于node</p>
+<pre><code>node -v  检查node安装的版本
+
+npm -v 检查npm版本
+</code></pre><p>2.生成项目说明书</p>
+<pre><code>npm init
+</code></pre><p>证书：MIT</p>
+<p>3.下载webpack’  下载webpack-cli</p>
+<p>npm install webpack –save-dev</p>
+<p>npm install webpack-cli –save-dev（命令行工具）</p>
+<p>也可以通过cnpm去下载 会快一些（淘宝镜像）</p>
+<p>注意报错:</p>
+<p>这个问题 是名字重复了   换个名称 例如 npm install webpack1  （名字可以不写）<br>所以前面设置名称最好避免叫webpack，以免和下载时带来不必要的麻烦<br>–save-dev 开发时的依赖<br>–save 运行的时候使用<br>5.webpack安装在node_module文件夹中<br>6.检查当前版本<br>.\node_modules.bin\webpack -v<br>若直接运行.\node_modules.bin\webpack 会报错<br>因为默认去当前文件夹src中去找入口文件（在当前文件夹中新建src文件并创建index.js）<br>7.得到dist文件<br>8.发现第6步太麻烦，可以通过脚本中的script<br>webpack:’webpack’<br>通过npm run webpack<br>此时会有个警告说没有设置好模式（开发模式或生产模式）<br>在script中写好<br>开发模式：<br>“dev”:’npm run webpack – –mode development’<br>再运行npm run dev就不会有警告了<br>生产模式：<br>   “prod”:”npm run webpack – –mode production”<br>再运行npm run prod</p>
+<h2 id="2-2-如何引入"><a href="#2-2-如何引入" class="headerlink" title="2.2 如何引入"></a>2.2 如何引入</h2><p>webpack的默认行为会把src中的index.js打包到dist文件的main.js<br>1.在src文件中新建一个nav.js，并导出值<br>export default “nav”<br>2.在index.js中写 import nav from “./nav”<br>那么运行npm run prod或者npm run dev就可以运行<br>3.当我们修改东西后，使用node ./dist/main.js运行发现值并没有变化<br>问题：每次修改东西，都要重新打包一次<br>解决办法：watch中监听<br> “prod”:”npm run webpack – –mode production –watch”<br>再使用npm run prod来运行。（生产模式就是压缩代码）<br>通过以上方式，只要nav.js中的数据变化，保存后，立刻就会监听到。</p>
+<p>ctr+c强退</p>
+<h2 id="2-3-ES6模块和node模式（推荐使用ES6模块）"><a href="#2-3-ES6模块和node模式（推荐使用ES6模块）" class="headerlink" title="2.3 ES6模块和node模式（推荐使用ES6模块）"></a>2.3 ES6模块和node模式（推荐使用ES6模块）</h2><h3 id="2-3-1-ES6模块语法"><a href="#2-3-1-ES6模块语法" class="headerlink" title="2.3.1  ES6模块语法"></a>2.3.1  ES6模块语法</h3><p><strong>1.</strong>在foot.js中（暴露出变量）</p>
+<p>export const top = ‘top’;</p>
+<p>export const bot = ‘bot’;</p>
+<p>或者</p>
+<p>export{top,bottom};</p>
+<h3 id="注意：export"><a href="#注意：export" class="headerlink" title="注意：export"></a>注意：export</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divTop = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">divTop.innerText = <span class="string">"我是个div"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> divTop</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divTop = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">divTop.innerText = <span class="string">"我是个div"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> divTop</span><br></pre></td></tr></table></figure>
+<p>不知道第二种方式为啥不可以，必须要用第一种方式</p>
+<p><strong>2.</strong>那么在index.js文件中（引入变量）</p>
+<p>import {top,bot} from “./footer”</p>
+<p>结果可以在另一个新的终端中</p>
+<p>输入node ./dist/main.js便可看到结果</p>
+<p><strong>注意：</strong></p>
+<p>在 color.js中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const red = &apos;red&apos;;</span><br><span class="line">const green = &apos;green&apos;;</span><br><span class="line">const makeColor = (color) =&gt;&#123;</span><br><span class="line">    return color;</span><br><span class="line">&#125;</span><br><span class="line">export &#123; red, green, makeColor&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123;makeColor&#125; from &apos;./color&apos;;//还是需要&#123;&#125;引入</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-2-node模式"><a href="#2-3-2-node模式" class="headerlink" title="2.3.2 node模式"></a>2.3.2 node模式</h3><p>1.在button.js中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">name</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">` btn:<span class="subst">$&#123;name&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.在index.js中</p>
+<p>node使用的是 require(“./button”)</p>
+<p>但是一个文件最好使用一个模块化语法</p>
+<p>import btn from “./foot1”；//btn因为前面的没有名字 所以可以起个名字btn来接受</p>
+<p>console.log(btn(“哈哈”));</p>
+<p>以上说明webpack可以对任意模块化语法都可以（推荐使用ES6）</p>
+<p>缺点：会有死代码的情况，因为import的时候，会把代码都引入，即使有一些不使用的也会引入。</p>
+<p>webpack有个tree shaking  可以把不用的那部分代码全部砍掉。（在打包的时候就砍掉了）</p>
+<h1 id="三-使用webpack的三种方式"><a href="#三-使用webpack的三种方式" class="headerlink" title="三 使用webpack的三种方式"></a>三 使用webpack的三种方式</h1><p>命令行工作：第二课时已经讲了</p>
+<p>npm init -y</p>
+<p>npm install webpack</p>
+<p>npm install webpack -cli</p>
+<p>在./node_modules/.bin/webpack会从src中的index.js文件当默认入口，然后输出到dist文件中的main.js</p>
+<p>更快速简洁的方式在脚本package.json中以键值对的形式写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"webpack"</span>: <span class="string">"webpack"</span>,</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"npm run webpack -- --mode development"</span>,</span><br><span class="line">  <span class="string">"prod"</span>: <span class="string">"npm run webpack -- --mode production --watch"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>因此就可以使用 npm run webpack去运行</p>
+<p>通过–告诉webpack  后面是传的参数</p>
+<p>webpack 4不需要写配置文件</p>
+<p>webpack 3必须要写配置文件</p>
+<h2 id="webpack的核心"><a href="#webpack的核心" class="headerlink" title="webpack的核心"></a>webpack的核心</h2><p>entry</p>
+<p>Output</p>
+<p>Loaders</p>
+<p>Plugins</p>
+<h2 id="3-1-配置文件"><a href="#3-1-配置文件" class="headerlink" title="3.1 配置文件"></a>3.1 配置文件</h2><h3 id="3-1-1-Entry"><a href="#3-1-1-Entry" class="headerlink" title="3.1.1 Entry"></a>3.1.1 Entry</h3><p><strong>告诉webpack入口文件在哪</strong></p>
+<p><strong>Entry一个入口</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./Entry.js'</span>,</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Entry多个入口</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        entry:  <span class="string">'./entry.js'</span> ,</span><br><span class="line">        index:<span class="string">' ./index.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-1-2-Output"><a href="#3-1-2-Output" class="headerlink" title="3.1.2 Output"></a>3.1.2 Output</h3><p><strong>告诉webpack把编译好的文件放在哪里</strong></p>
+<p>__dirname(英文下的杠杠)可以快速获取当前文件夹的绝对路径</p>
+<h3 id="3-1-3-Loaders"><a href="#3-1-3-Loaders" class="headerlink" title="3.1.3 Loaders"></a>3.1.3 Loaders</h3><p><strong>告诉webpack在添加到依赖图之前如何转换一个文件</strong></p>
+<p>告诉webpack在添加到依赖图之前需要做什么，本质上就是一个函数（有些浏览器不支持ES6，所以在使用前，需要转化为ES5，那么这些就是Loaders来做）</p>
+<p>ues里是从右向左执行的。</p>
+<h3 id="3-1-4-Plugins"><a href="#3-1-4-Plugins" class="headerlink" title="3.1.4 Plugins"></a>3.1.4 Plugins</h3><p><strong>在编译的过程中添加你想要的任何操作</strong></p>
+<p>注入文件  打包压缩 loader做不了的都可以使用plugin去做</p>
+<h3 id="3-1-5-综合使用"><a href="#3-1-5-综合使用" class="headerlink" title="3.1.5 综合使用"></a>3.1.5 综合使用</h3><p><strong>以对象的形式暴露出来</strong></p>
+<p>在文件的根目录下新建webpack.config.js文件中配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">""</span>,</span><br><span class="line">    output: <span class="string">""</span>,</span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules: [&#123;</span><br><span class="line">            test: <span class="regexp">/\.js$/</span> ,</span><br><span class="line">            use: [<span class="string">"bable-loader"</span>]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    Plugin;[</span><br><span class="line">        <span class="keyword">new</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>函数</strong></p>
+<p>优点：可以接受参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">()</span> =&gt;</span>(&#123;&#125;)<span class="comment">//避免把大括号认为是个代码块，所以加个括号</span></span><br></pre></td></tr></table></figure>
+<p>之前是直接在package.json文件中的script中通过 –的形式传参数</p>
+<p>现在，给env对象传个属性（给env这个对象中传了一个属性叫做mode，而不是直接告诉命令行去直接去改变mode属性）mode选项也在配置文件中写</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">  "webpack": "webpack",</span><br><span class="line">  "dev": "npm run webpack -- --env.mode development",</span><br><span class="line">  "prod": "npm run webpack -- --env.mode production"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>此时运行 npm run dev 会有警告说我们没有设置模式</p>
+<p>那么如何接参数呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(env);<span class="comment">//注意大小写</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        mode: env.mode,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简写的形式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">mode</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>多个对象的属性的时候</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">&#123;mode&#125;</span>)=&gt;</span>&#123;<span class="comment">//此时mode需要用&#123;&#125;</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        mode,</span><br><span class="line">        entry: <span class="string">"./src/index1.js"</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">module.exports = (&#123;mode&#125;)=&gt;&#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        mode,</span><br><span class="line">        entry: "./src/index1.js",</span><br><span class="line">        output:&#123;</span><br><span class="line">            path: __dirname + '/build',//以绝对的路径</span><br><span class="line">            filename: "bundle.js"</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以使用解构赋值直接获取mode属性。</p>
+<p><strong>plugin</strong></p>
+<p>安装： npm install html-webpack-plugin –save-dev</p>
+<p>在webpack.config.js中，引入const htmlWebpackPlugin = require(“html-webpack-plugin”);</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins:[</span><br><span class="line">         new htmlWebpackPlugin(),</span><br><span class="line">     ]</span><br></pre></td></tr></table></figure>
+<p>可以自动注入标签(会把output中的js文件直接引入到创建的html文件中)</p>
+<p>找webpack中根目录下的index.html  把它当做模板 然后将文件注入进去</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins:[</span><br><span class="line">          <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">              template: <span class="string">"./index.html"</span></span><br><span class="line">          &#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>如何使用webpack中内置插件</strong></p>
+<p>在webpack.config.js中，引入const htmlWebpackPlugin = require(“html-webpack-plugin”);</p>
+<p><strong>开服务器</strong></p>
+<p>命令： npm install webpack-dev-server</p>
+<p>于此同时我们要改json中的配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">  "webpack": "webpack",</span><br><span class="line">  "webpack-dev-server":"webpack-dev-server",</span><br><span class="line">  "dev": "npm run webpack-dev-server -- --env.mode development",</span><br><span class="line">  "prod": "npm run webpack -- --env.mode production"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>这样就可以创建个服务器，只是一个过渡 。</p>
+<h3 id="3-1-6-如何把开发和生产模式分开"><a href="#3-1-6-如何把开发和生产模式分开" class="headerlink" title="3.1.6 如何把开发和生产模式分开"></a>3.1.6 如何把开发和生产模式分开</h3><p>命令：npm install webpack-merge –save-dev，这个方法是可以把两个对象融合</p>
+<p>在webpack文件中引入文件</p>
+<p>const webpack = require(“webpack-merge “);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return webpackMerge(&#123;开发模式就读开发模式的.js&#125;,&#123;生产模式就读生产模式的.js&#125;)</span><br></pre></td></tr></table></figure>
+<p>新建文件夹build-utils创建两个js文件，一个是webpack.development.js 另一个是webpack.production.js，分别在文件中配置一下output</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename: <span class="string">"prod.js"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写一个读取mode的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> configMode = <span class="function">(<span class="params">mode</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">`./build-utils/webpack.<span class="subst">$&#123;mode&#125;</span>.js`</span>)<span class="comment">//根据输入的模式读取不同的js文件</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">&#123;mode&#125;</span>)=&gt;</span>&#123;</span><br><span class="line"><span class="keyword">return</span> webpackMerge(&#123;</span><br><span class="line">    mode,</span><br><span class="line">    entry: <span class="string">"./src/index1.js"</span>,</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">            template: <span class="string">"./index.html"</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> webpack.ProgressPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125; , configMode(mode));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>哈希值作用：缓存机制，和内容匹配，内容不一样，哈希值也不一样。会请求新的文件，可以保证用户获取的是最新的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename: &quot;[chunkhash].js&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-1-7-Loder使用"><a href="#3-1-7-Loder使用" class="headerlink" title="3.1.7 Loder使用"></a>3.1.7 Loder使用</h3><p><strong>命令</strong>： npm install sass-loader node-sass –save-dev</p>
+<p>在这里注意：output中filename 不能是哈希值的形式，或者先不写，否则会出错</p>
+<p>它会把配置的json文件给加上哈希值</p>
+<p> path: ‘F:\web_study\js\8webpack\node_modules\read-pkg-up\package.json.4217342982’,</p>
+<p>.scss文件转换为css后，还有下载个css-loader</p>
+<p><strong>命令</strong>：npm install css-loader –save-dev</p>
+<p>但是并没有注入到html文件中，所以还要下载style-loader</p>
+<p><strong>命令</strong>：npm install style-loader –save-dev</p>
+<p><strong>–hot</strong> 热模块启动（局部刷新，每次都刷新会造成操作上的影响）</p>
+<p>在脚本配置</p>
+<p>“dev”: “npm run webpack-dev-server – –env.mode development –hot”,</p>
+<p>可以起到局部作用，不是整个页面都刷新。刷新速度比较快。</p>
+<p>那么以上只是注入了style</p>
+<p>我们想以css文件的方式去添加呢？要下载 mini-css-extract-plugin –save-dev</p>
+<h4 id="3-1-7-1-babel-loader的使用"><a href="#3-1-7-1-babel-loader的使用" class="headerlink" title="3.1.7.1 babel-loader的使用"></a>3.1.7.1 babel-loader的使用</h4><p>npm install babel-loader @babel/core @babel/preset-env –save-dev(core核心可以分析语法，可以生成新的文件）</p>
+<p>安装插件合集（因为一个语法引入一个插件太费劲了）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">    rules:[&#123;</span><br><span class="line">        test:<span class="regexp">/\.js$/</span>,</span><br><span class="line">        use:[<span class="string">"babel-loader"</span>]<span class="comment">//这样会直接使用babel-core，还是ES6的语法，所以要写成对象的形式</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">    rules:[&#123;</span><br><span class="line">        test:<span class="regexp">/\.js$/</span>,</span><br><span class="line">        use:[&#123;</span><br><span class="line">            loader:<span class="string">"babel-loader"</span>,</span><br><span class="line">            options:&#123;</span><br><span class="line">                presets:[<span class="string">"@babel/preset-env"</span>]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h4 id="3-1-7-2-url-loader"><a href="#3-1-7-2-url-loader" class="headerlink" title="3.1.7.2 url-loader"></a>3.1.7.2 url-loader</h4><p>在rules对象中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test:<span class="regexp">/\.jpe?g$/</span>,</span><br><span class="line">    use:[<span class="string">"url-loader"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>npm install url-loder file-loader –save-dev</p>
+<p>如果报错就分开安装</p>
+<p>npm install url-loader –save-dev</p>
+<p>npm install file-loader –save-dev</p>
+<p>在src中的image.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (url)=&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> image = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line">    image.src = url;</span><br><span class="line">    <span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tupian <span class="keyword">from</span> <span class="string">'./2.jpg'</span>;</span><br><span class="line"><span class="keyword">import</span> creatImage <span class="keyword">from</span> <span class="string">'./image'</span>;</span><br><span class="line"><span class="keyword">const</span> image = creatImage(tupian);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(image);</span><br></pre></td></tr></table></figure>
+<p>配置url-loader</p>
+<p>优化图片</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test:<span class="regexp">/\.jpe?g$/</span>,</span><br><span class="line">    use:[&#123;</span><br><span class="line">        loader:<span class="string">"url-loader"</span>,</span><br><span class="line">        options:&#123;</span><br><span class="line">            limit:<span class="number">5000</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-优化配置文件"><a href="#3-2-优化配置文件" class="headerlink" title="3.2 优化配置文件"></a>3.2 优化配置文件</h2><p>特定条件下使用特定插件</p>
+<p>在特定条件下去加载配置项</p>
+<p>根据传的参数不同（通过命令行工具传参），去加载不同特定条件下的webpack的配置文件</p>
+<p>npm run prod – –env.参数  预处理的东西</p>
+<p>例如：npm run prod – –env.preset  a</p>
+<p>可以根绝这个参数去决定加载哪个js文件（犹如之前学的分别配置生产和开发模式的js文件）</p>
+<p>build-utils文件夹中webpack.a.js文件</p>
+<p>配置在一个loaderPreset.js(选择配置的文件)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">presets</span>)=&gt;</span>&#123;</span><br><span class="line">    presets = presets || [];</span><br><span class="line">    <span class="keyword">const</span> mergePresets = [].concat(presets);</span><br><span class="line">    <span class="keyword">const</span> mergeConfig = mergePresets.map(<span class="function">(<span class="params">presetName</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">`./presets/webpack.<span class="subst">$&#123;presetName&#125;</span>`</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">console</span>.log(mergeConfig)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在webpack.config.js中要引入</p>
+<p>const loadPresets = require(“./build-utils/loaderpresets”)</p>
+<p>合并插件</p>
+<p>webpack-merge</p>
+<h3 id="3-2-2-分析插件-压缩代码"><a href="#3-2-2-分析插件-压缩代码" class="headerlink" title="3.2.2 分析插件(压缩代码)"></a>3.2.2 分析插件(压缩代码)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">webpack-bundle-analyzer</span><br><span class="line">npm install --save-dev webpack-bundle-analyzer</span><br><span class="line">运行 npm run prod -- --env.preset analyzer</span><br><span class="line">会直接开个服务器分析文件</span><br><span class="line">配置脚本</span><br><span class="line">&quot;prod:alz&quot;:&quot;npm run prod -- --env.presets analyze&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-3-变成压缩文件"><a href="#3-2-3-变成压缩文件" class="headerlink" title="3.2.3 变成压缩文件"></a>3.2.3 变成压缩文件</h3><p>一般不用，爬虫优化不好，图片不清晰</p>
+<p>webpack compression-webpack-plugin</p>
+<h1 id="四-webpack性能优化"><a href="#四-webpack性能优化" class="headerlink" title="四 webpack性能优化"></a>四 webpack性能优化</h1><h2 id="4-1-导致页面卡的主要原因"><a href="#4-1-导致页面卡的主要原因" class="headerlink" title="4.1 导致页面卡的主要原因"></a>4.1 导致页面卡的主要原因</h2><ol>
+<li>初始化的JavaScript太大</li>
+<li>初始化的css太大</li>
+<li>刚开始太多的请求</li>
+</ol>
+<h2 id="4-2-最优目标"><a href="#4-2-最优目标" class="headerlink" title="4.2 最优目标"></a>4.2 最优目标</h2><h3 id="4-2-1-几种"><a href="#4-2-1-几种" class="headerlink" title="4.2.1 几种"></a>4.2.1 几种</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;= 200kb的初始化化JavaScript</span><br><span class="line"></span><br><span class="line">&lt;=100kb的初始化css</span><br><span class="line"></span><br><span class="line">http:&lt;=6个请求</span><br><span class="line"></span><br><span class="line">http/2：&lt;=20个请求</span><br><span class="line"></span><br><span class="line">90%的代码覆盖率 10%未使用代码</span><br><span class="line"></span><br><span class="line">ctr +shift+p     调出代码覆盖率  coverge</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-2-代码分离"><a href="#4-2-2-代码分离" class="headerlink" title="4.2.2 代码分离"></a>4.2.2 代码分离</h3><p>把打包的一个js拆分成小块（初始化未使用的代码放在异步中，使用的时候再加载）</p>
+<h4 id="4-2-2-1-代码分离方式"><a href="#4-2-2-1-代码分离方式" class="headerlink" title="4.2.2.1 代码分离方式"></a>4.2.2.1 代码分离方式</h4><p><strong>静态分离</strong>（不推荐）多个html多个js才使用</p>
+<p>入口文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entry:&#123;</span><br><span class="line">    index1 :&quot;./src/index1.js&quot;,</span><br><span class="line">    index2:&quot;./src/index2.js&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>出口文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output&#123;</span><br><span class="line">    filename:&quot;[chunkhash].js&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>“动态”导入</strong></p>
+<p>不是webpack是动态的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">import</span>(<span class="string">"./top"</span>).then(<span class="function"><span class="params">top</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(top.divTop);</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-3-动态语法的其他用法"><a href="#4-2-3-动态语法的其他用法" class="headerlink" title="4.2.3 动态语法的其他用法"></a>4.2.3 动态语法的其他用法</h3><h4 id="可以加载自己写的模块"><a href="#可以加载自己写的模块" class="headerlink" title="可以加载自己写的模块"></a>可以加载自己写的模块</h4><pre><code>简写
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getTop = <span class="function"><span class="params">()</span> =&gt;</span><span class="keyword">import</span>(<span class="string">"./top"</span>);</span><br><span class="line">button.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    getTop().then(<span class="function"><span class="params">top</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(top.divTop);</span><br><span class="line">    &#125;)</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="也可以加载第三方库"><a href="#也可以加载第三方库" class="headerlink" title="也可以加载第三方库"></a>也可以加载第三方库</h4><p>lodash</p>
+<p>npm install lodash-es –save</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const getLodash = ()=&gt;import(&quot;lodash-es&quot;);</span><br><span class="line">button.onclick = function()&#123;</span><br><span class="line">    getLodash().then((_)=&gt;&#123;</span><br><span class="line">        console.log(_s)</span><br><span class="line">    &#125;)</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以通过magic comments即魔法注释来改变生产后加载的js名字</p>
+<pre><code>通过process.env.NODE_ENV可以获取当前mode状态；借此判断开发模式，下面的要判断开发模式；
+
+当加载文件夹的时候，开发模式可以使用lazy-once；懒加载，使用什么才会加载；避免开发的时候编译过慢；
+</code></pre><p>可以使用预加载插件，搜索code Splitting添加注释，实现代码预加载功能；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/10/webpack工程化/" data-id="cjshkau7i001cmgggqok56mlq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/15/git使用总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          git使用总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/31/网络基础_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">网络基础总结1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/23/i/">i</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>网络基础总结2 | 此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="History 历史记录管理 history历史记录管理：//作用：在同一个页面中实现页面返回，记录功能； history.forward（）向前翻页， history.back（）向后翻页， history.go（num）转跳到当前条数 history.length历史页长度， history.pushState(ststateObjateObj, ‘page2’, ‘bar.html’) 添加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络基础总结2">
+<meta property="og:url" content="http://yoursite.com/2018/12/31/网络知识_2/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="History 历史记录管理 history历史记录管理：//作用：在同一个页面中实现页面返回，记录功能； history.forward（）向前翻页， history.back（）向后翻页， history.go（num）转跳到当前条数 history.length历史页长度， history.pushState(ststateObjateObj, ‘page2’, ‘bar.html’) 添加">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-23T13:55:41.575Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络基础总结2">
+<meta name="twitter:description" content="History 历史记录管理 history历史记录管理：//作用：在同一个页面中实现页面返回，记录功能； history.forward（）向前翻页， history.back（）向后翻页， history.go（num）转跳到当前条数 history.length历史页长度， history.pushState(ststateObjateObj, ‘page2’, ‘bar.html’) 添加">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-网络知识_2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/31/网络知识_2/" class="article-date">
+  <time datetime="2018-12-31T08:28:39.000Z" itemprop="datePublished">2018-12-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/网络知识点总结/">网络知识点总结</a>►<a class="article-category-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网络基础总结2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>History 历史记录管理</p>
+<p>history历史记录管理：//作用：在同一个页面中实现页面返回，记录功能；</p>
+<p>history.forward（）向前翻页，</p>
+<p>history.back（）向后翻页，</p>
+<p>history.go（num）转跳到当前条数</p>
+<p>history.length历史页长度，</p>
+<p>history.pushState(ststateObjateObj, ‘page2’, ‘bar.html’) 添加一条历史记录；</p>
+<p>history.replaceState(ststateObjateObj, ‘page3’, ‘bar.html’) 替换当前历史记录；</p>
+<p>page1，page2可以不传，是预留的参数，目前还没有作用；</p>
+<p>window.onpopstate = function(e) {e.state} 历史记录发生发生变化时触发。但是上面两中情况不会触发；</p>
+<p>e.state即为当前页之前传递进的对象；可以在onpopstate绑定的函数中进行使用；</p>
+<p>location.href可以获取当前网址；</p>
+<p>location.search获取网址后面？以后的内容；</p>
+<p>a标签如果不想让其被链接可以在点击函数中返回false，即可取消默认事件；</p>
+<p>.onclick（）事件可以直接执行；</p>
+<p>获取属性值可以用.getAttribute（属性名）方法获取；</p>
+<p>cookie:</p>
+<p>浏览器第一次访问服务器时，服务器会返回cookie值，给浏览器设置上，下次浏览器再次访问的时候，会自动在http首部加上cookie值，这样服务器可以返回个性化的服务；</p>
+<p>cookie会话型，浏览器退出，cookie缓存删除；</p>
+<p>cookie持久型，cookie缓存几天，然后自行删除；</p>
+<p>domain表示可以在哪个域中使用该cookie</p>
+<p>cookie操作：</p>
+<p>可以通过document.cookie = ‘id=12；expries=’+new Date（）；设置cookie的id与时间；</p>
+<p>sessionStorage 临时存储 浏览器关闭存储结束</p>
+<p>localStorage 永久存储 除非用户手动删除</p>
+<p>1、基本添加和读取</p>
+<p>添加：</p>
+<p>localStorage.user = ‘aimee’;</p>
+<p>localStorage.objj = JSON.stringify(obj);</p>
+<p>读取：</p>
+<p>localStorage.user;</p>
+<p>JSON.parse(localStorage.objj );</p>
+<p>2、API操作添加和读取</p>
+<p>localStorage.setItem(‘id’,12345)</p>
+<p>localStorage.getItem(‘id’)</p>
+<p>localStorage.removeItem(‘id’)</p>
+<p>localStorege.clear();</p>
+<p>localStorage只有在同源时才能互相取用；</p>
+<p>sessionStorage只能在当前页面使用；</p>
+<p>CORS跨域请求：//通过配置http首部进行实现</p>
+<p>跨域请求资源需要服务器配置：Access-Control-Allow-Origin：*（代表所有源，也可以设置固定源）</p>
+<p>CROS分为简单请求，预检请求；</p>
+<p>简单请求：</p>
+<p>1、使用下列方法之一：</p>
+<p>GET POST HEAD  </p>
+<p>2、content-Type值为下列之一：</p>
+<p>text/plain </p>
+<p>multipart/form-data </p>
+<p>application/x-www-form-urlencoded </p>
+<p>等</p>
+<p>3.只要服务器设置允许跨域请求，即可请求数据；</p>
+<p>预检请求：</p>
+<p>1、使用非GET POST HEAD方法</p>
+<p>2、content-Type值不为下列之一：</p>
+<p>text/plain </p>
+<p>multipart/form-data </p>
+<p>application/x-www-form-urlencoded </p>
+<p>3、人为设置了 CORS 安全的首部字段集合之外的首部字段，如人为的写一个。</p>
+<p>这样会首先发送预检请求，只有当条件符合预检要求，才会再发送真正的请求。</p>
+<p>如果预检过，浏览器会有记录，不会重新发送；</p>
+<p>postMessage通信：</p>
+<p>可以进行跨域访问，但是不能进行变量的读写操作；</p>
+<p>在父页面中通过iframe引入子页面，为其定义name名称，方便其找到；</p>
+<p>只有在同源下，才可以通过window.frames【名称】这个就是子页面的window对象，可以直接获取其中变量等等。</p>
+<p>在不同源情况下，可以通过postMessage传输数据；</p>
+<p>父页面向子页面传输数据：</p>
+<p>window.frames【name】.postMessage（值，协议域名端口）；</p>
+<p>子页面向父页面传值：</p>
+<p>parent.postMessage（值，协议域名端口）</p>
+<p>接收方：</p>
+<p>监听message事件，接收messageEvent（e），e上会有data属性，即为其他页面传过来的值；e上也有origin属性，可以判断从哪个网站来的；或者e.currentTarget属性，都可以判断；</p>
+<p>WebSocket双向通讯</p>
+<p>http协议中服务器不能主动连接客户端，只能由客户端发起请求；</p>
+<p>WebSocket 对象提供了一组 API，用于创建和管理 WebSocket 连接, 以及通过连接发送和接收数据.</p>
+<p>Websocket 其实是一个新协议，跟HTTP协议基本没有关系，只是为了兼容现有浏览器的握手规范而已.借用了HTTP的协议来完成握手</p>
+<p>Websocket服务器需要配置Websocket协议，在传输数据，建立链接也是通过http协议而进行的。是一个持续链接，只有一方发起断开请求才会断开；请求过程与http协议类似，同样TCP三次握手；</p>
+<p>使用方式：</p>
+<p>var socket = new WebSocket（url）；</p>
+<p>socket.onopen，绑定事件，链接建立成功之后触发：</p>
+<p>socket.send（data），传输数据，最好在open之后调用；</p>
+<p>socket.close（），终止当前链接；</p>
+<p>socket.onmessage ，绑定事件，服务器返回数据时触发，同样接收messageEvent参数</p>
+<p>WebSocket.onclose，用于指定连接关闭后的回调函数</p>
+<p>WebSocket.onerror，用于指定连接失败后的回调函数</p>
+<p>WebSocket.onmessage，用于指定当从服务器接受到信息时的回调函数</p>
+<p>WebSocket.onopen，用于指定连接成功后的回调函数</p>
+<p>WebSocket优点：</p>
+<p>浏览器，服务器都可以主动的发送资源</p>
+<p>不用频率创建TCP请求，以及销毁请求，坚守网络带宽的占用，节省服务器资源；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/31/网络知识_2/" data-id="cjshkats80008mgggoi0nwwyh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/31/网络基础_1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          网络基础总结1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/17/jQuery_3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jQuery底层笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/23/i/">i</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

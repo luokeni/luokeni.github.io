@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>git使用总结 | 此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一 git简介及命令本地版本控制系统 集中式版本控制系统 分布式版本控制系统 三个工作区域工作目录 暂存区域：缺点是敲的过程中保存很多次，一个项目保存各种版本就比较乱，工作流程。遇到问题就存 会存大量的文件 工作流程就不够清晰了。 Git仓库 快照记录了每一次的变化，并有作者和邮箱 哈希值 照片的编号 git 命令1.把打开git bash的默认地址改成你文件夹目标地址 方法：右键git bash">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git使用总结">
+<meta property="og:url" content="http://yoursite.com/2019/01/15/git使用总结/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="一 git简介及命令本地版本控制系统 集中式版本控制系统 分布式版本控制系统 三个工作区域工作目录 暂存区域：缺点是敲的过程中保存很多次，一个项目保存各种版本就比较乱，工作流程。遇到问题就存 会存大量的文件 工作流程就不够清晰了。 Git仓库 快照记录了每一次的变化，并有作者和邮箱 哈希值 照片的编号 git 命令1.把打开git bash的默认地址改成你文件夹目标地址 方法：右键git bash">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-23T14:05:47.666Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git使用总结">
+<meta name="twitter:description" content="一 git简介及命令本地版本控制系统 集中式版本控制系统 分布式版本控制系统 三个工作区域工作目录 暂存区域：缺点是敲的过程中保存很多次，一个项目保存各种版本就比较乱，工作流程。遇到问题就存 会存大量的文件 工作流程就不够清晰了。 Git仓库 快照记录了每一次的变化，并有作者和邮箱 哈希值 照片的编号 git 命令1.把打开git bash的默认地址改成你文件夹目标地址 方法：右键git bash">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/15/git使用总结/" class="article-date">
+  <time datetime="2019-01-15T08:28:39.000Z" itemprop="datePublished">2019-01-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git使用总结/"> git使用总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git使用总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-git简介及命令"><a href="#一-git简介及命令" class="headerlink" title="一 git简介及命令"></a>一 git简介及命令</h1><p>本地版本控制系统</p>
+<p>集中式版本控制系统</p>
+<p>分布式版本控制系统</p>
+<h2 id="三个工作区域"><a href="#三个工作区域" class="headerlink" title="三个工作区域"></a>三个工作区域</h2><p>工作目录</p>
+<p>暂存区域：缺点是敲的过程中保存很多次，一个项目保存各种版本就比较乱，工作流程。遇到问题就存 会存大量的文件 工作流程就不够清晰了。</p>
+<p>Git仓库</p>
+<h2 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h2><p>记录了每一次的变化，并有作者和邮箱</p>
+<p>哈希值 照片的编号</p>
+<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><p>1.把打开git bash的默认地址改成你文件夹目标地址</p>
+<p>方法：右键git bash 点击属性，将目标后的的c-home删除， 将起始位置改成你的文件夹的地址。</p>
+<p>2.其实就是你克隆下你的仓库地址</p>
+<p>git clone <a href="http://git......" target="_blank" rel="noopener">http://git......</a>.</p>
+<p>2.上步就会在你设置的默认文件夹中得到一个chanke的文件</p>
+<p>3.cd chanke</p>
+<p>4.将新增的文件夹直接copy到chanke文件夹中</p>
+<p>5.git add . 添加文件，注意 add后面有个空格</p>
+<p>  在此步骤中，如有 LF will be replaced by CRLF in… 类似的话，可以使用命令 git config core autocrlf false 即可</p>
+<p>6.git commit -m”备注信息”</p>
+<p>7.git push  </p>
+<p>8.git status 查看状态</p>
+<p>9.git diff 查看修改</p>
+<p>git diff 工作目录与暂存区域有什么变化</p>
+<p>git diff –staged 比较暂存区域和上一个版本之间有什么不同</p>
+<p>git diff –staged 比较工作目录和上一个版本有什么不同</p>
+<p>10.git log 提交的信息</p>
+<p>11.撤销操作</p>
+<p>git checkout –文件 撤销到暂存 </p>
+<p>git reset HEAD 文件 撤销暂存</p>
+<h1 id="二-git分支的讲解"><a href="#二-git分支的讲解" class="headerlink" title="二.git分支的讲解"></a>二.git分支的讲解</h1><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>1.分支就是指针</p>
+<p>默认分支master</p>
+<p>2.创建的平行指针<br>git branch testing<br>3.分支切换<br>git checkout 名字</p>
+<h2 id="工作中使用分支"><a href="#工作中使用分支" class="headerlink" title="工作中使用分支"></a>工作中使用分支</h2><p>不要在主分支上修改代码 </p>
+<p>#四.gitHub的创建与使用</p>
+<h2 id="远程仓库的使用："><a href="#远程仓库的使用：" class="headerlink" title="远程仓库的使用："></a>远程仓库的使用：</h2><p>远程是一个独立的分支，远程仓库可以当作云盘使用</p>
+<p>1.git remote//查看当前本地仓库是否和远程仓库有联系；</p>
+<p>2.git remote add origin url；与目标url建立链接；（origin为默认名字，也可以换；）</p>
+<p>3.git remote -v查看当前链接状态；推送与下拉可以是不同的仓库； </p>
+<p>出于安全考虑，fetch（主仓库）和push（副本）可以是两个仓库</p>
+<p>4.git push (-u) origin master推送到远程origin的master分支上</p>
+<p>加上-u表示记录当前，下次推送直接按照这次；git push提交就可以</p>
+<p>5.git branch -va//查看的远程的版本；会将所有的分支列出来</p>
+<h2 id="有合作的时候"><a href="#有合作的时候" class="headerlink" title="有合作的时候"></a>有合作的时候</h2><p>6.git fetch url（或者origin代号）；</p>
+<p>拉取网站内容；但是不会更改本地文件；</p>
+<p>7.可以用git merge origin/master 将远程master分支合并到当前文件中；</p>
+<p>8.git pull origin master //拉取加合并代码；</p>
+<p>在本地代码，与origin代码有追踪的时候可以直接git pull；不用穿</p>
+<p>git push origin master //上传代码；</p>
+<p>#项目开发中使用git</p>
+<h2 id="git工作流"><a href="#git工作流" class="headerlink" title="git工作流"></a>git工作流</h2><p>方法一<br>merge会把解决冲突给提交一个版本<br>git rebase 就可以解决这个问题(线性)<br>步骤<br>git pull –rebase<br>git add .<br>git rebase –continue<br>git push</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/15/git使用总结/" data-id="cjshkatph0002mgggnklbpgl5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/20/sass语法总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sass语法总结笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/10/webpack工程化/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">webpack使用总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/23/i/">i</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>jQuery底层笔记 | 此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一 高级方法extend1.1 $.extend()可以合并对象，合并的内容都会在第一个对象上。 1.1.1 浅拷贝1$.extend(obj,obj1,obj2) 123456789101112131415161718var obj = &amp;#123;  &amp;#125;var obj1 = &amp;#123;    luo:&amp;#123;        name:&apos;xie&apos;,        age:9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery底层笔记">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/jQuery_3/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="一 高级方法extend1.1 $.extend()可以合并对象，合并的内容都会在第一个对象上。 1.1.1 浅拷贝1$.extend(obj,obj1,obj2) 123456789101112131415161718var obj = &amp;#123;  &amp;#125;var obj1 = &amp;#123;    luo:&amp;#123;        name:&apos;xie&apos;,        age:9">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-23T13:37:52.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery底层笔记">
+<meta name="twitter:description" content="一 高级方法extend1.1 $.extend()可以合并对象，合并的内容都会在第一个对象上。 1.1.1 浅拷贝1$.extend(obj,obj1,obj2) 123456789101112131415161718var obj = &amp;#123;  &amp;#125;var obj1 = &amp;#123;    luo:&amp;#123;        name:&apos;xie&apos;,        age:9">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery_3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/17/jQuery_3/" class="article-date">
+  <time datetime="2018-12-17T08:28:39.000Z" itemprop="datePublished">2018-12-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a>►<a class="article-category-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery底层笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-高级方法extend"><a href="#一-高级方法extend" class="headerlink" title="一 高级方法extend"></a>一 高级方法extend</h1><h2 id="1-1-extend"><a href="#1-1-extend" class="headerlink" title="1.1 $.extend()"></a>1.1 $.extend()</h2><p>可以合并对象，合并的内容都会在第一个对象上。</p>
+<h3 id="1-1-1-浅拷贝"><a href="#1-1-1-浅拷贝" class="headerlink" title="1.1.1 浅拷贝"></a>1.1.1 浅拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend(obj,obj1,obj2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    luo:&#123;</span><br><span class="line">        name:<span class="string">'xie'</span>,</span><br><span class="line">        age:<span class="number">9</span></span><br><span class="line">    &#125;,</span><br><span class="line">    ni:&#123;</span><br><span class="line">        name:<span class="string">'sun'</span>,</span><br><span class="line">        age:<span class="number">9</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    age: <span class="number">23</span></span><br><span class="line">&#125;</span><br><span class="line">$.extend(obj, obj1, obj2)</span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br></pre></td></tr></table></figure>
+<p>注意：是浅拷贝（拿的只是索引），且如果是属性相同的，前面的会被后面的覆盖</p>
+<h3 id="1-1-2-深拷贝"><a href="#1-1-2-深拷贝" class="headerlink" title="1.1.2 深拷贝"></a>1.1.2 深拷贝</h3><p>此时为深拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend(<span class="literal">true</span>,obj,obj1,obj2)</span><br></pre></td></tr></table></figure>
+<h3 id="1-1-3-合并到"><a href="#1-1-3-合并到" class="headerlink" title="1.1.3 合并到$"></a>1.1.3 合并到$</h3><p>此时合并到$上去了，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.extend(obj)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">    luo:&#123;</span><br><span class="line">        name:&apos;xie&apos;,</span><br><span class="line">        age:9</span><br><span class="line">    &#125;,</span><br><span class="line">      ni:function()&#123;</span><br><span class="line">        console.log(&apos;hhh&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$.extend(obj1)</span><br><span class="line">console.log(obj1)</span><br><span class="line">console.log($.ni)//通过这种方式调用</span><br></pre></td></tr></table></figure>
+<p>以上证明可以使用extend拓展工具方法。</p>
+<p>把对象直接写在extend中</p>
+<h3 id="1-1-4-extend-拓展工具方法以及-fn-extend"><a href="#1-1-4-extend-拓展工具方法以及-fn-extend" class="headerlink" title="1.1.4 $.extend()拓展工具方法以及$.fn.extend()"></a>1.1.4 $.extend()拓展工具方法以及$.fn.extend()</h3><pre><code>**$.extend()拓展工具方法**
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">12</span>,<span class="number">3</span>,<span class="number">95</span>,<span class="number">32</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">89</span>];</span><br><span class="line">$.extend(&#123;</span><br><span class="line">    max:<span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> mx = arr[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">            <span class="keyword">var</span> cur = arr[i];</span><br><span class="line">          mx = cur &gt; mx ? cur : mx;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mx;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">123</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    min:<span class="function"><span class="keyword">function</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> mn = arr[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">           mn = arr[i] &lt; mn ? arr[i] : mn</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mn;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log($.max(arr1));</span><br><span class="line"><span class="built_in">console</span>.log($.min(arr1));</span><br></pre></td></tr></table></figure>
+<pre><code>**$.fn.extend()**
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.fn.extend(&#123;</span><br><span class="line">    change: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fadeOut(<span class="number">100</span>).fadeIn();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line">$(<span class="string">'.box'</span>).mouseenter(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).change();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在jQuery中，fn = prototype</p>
+<p><strong>相同点</strong></p>
+<hr>
+<pre><code>两者都可以浅拷贝和深拷贝。
+</code></pre><p><strong>不同点</strong></p>
+<hr>
+<pre><code> **$.extend()**定义在函数上， **$.fn.extend()**定义在原型上的。
+
+$.extend(obj) 会将obj合并到$身上(工具方法)
+
+$.fn.extend(obj) 会将obj合并到$.fn身上，实例方法(定义在原型上的)
+</code></pre><p>想使用实例方法，必须要讲$()函数执行一下。从它的原型上才可以找到实例方法。</p>
+<h2 id="1-2-Callbacks"><a href="#1-2-Callbacks" class="headerlink" title="1.2 $Callbacks()"></a>1.2 $Callbacks()</h2><pre><code>Callbacks()为Deferred()提供了底层方法
+</code></pre><h3 id="1-2-1-在立即执行函数中使用"><a href="#1-2-1-在立即执行函数中使用" class="headerlink" title="1.2.1 在立即执行函数中使用"></a>1.2.1 在立即执行函数中使用</h3><pre><code>可以解决作用域的问题
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cb = $.Callbacks();</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hh'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    cb.add(f1);<span class="comment">//用回调函数解决作用域问题</span></span><br><span class="line">&#125;)();</span><br><span class="line">$(<span class="string">'.box'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    cb.fire();<span class="comment">//触发集合</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-2-Callbacks-观察者模式"><a href="#1-2-2-Callbacks-观察者模式" class="headerlink" title="1.2.2 Callbacks()观察者模式"></a>1.2.2 Callbacks()观察者模式</h3><p>一对多的模式</p>
+<p>cd.add()方法相当于关注(push进去)，cd.fire()相当于发布(forEach出来)</p>
+<p><strong>原理：</strong></p>
+<p>once memory unique stopOnFalse</p>
+<p><strong>once </strong> 只能触发一次，下次fire的时候就不会执行</p>
+<p><strong>memory</strong>  之前触发过，再添加add的时候，会自动触发</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> cb = $.Callbacks(<span class="string">'memory'</span>);</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">'hh'</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">'ll'</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   cb.add(f1);</span><br><span class="line">   cb.fire();</span><br><span class="line">   cb.add(f2);</span><br><span class="line"><span class="comment">//输出结果是 hh ll</span></span><br></pre></td></tr></table></figure>
+<p>  cb.add([f1,]f2]);按照顺序执行</p>
+<p><strong>unique</strong>添加的时候，只能添加一次，去重(只要是重复的，都会去重)</p>
+<p><strong>stopOnFalse</strong>  当 Callbacks(stopOnFalse) ，回调函数中有一个是 使用了return  false后，之后的队列将会被取消，不再执行。</p>
+<h2 id="1-3-Deferred"><a href="#1-3-Deferred" class="headerlink" title="1.3  $.Deferred()"></a>1.3  $.Deferred()</h2><pre><code>为ajax提供底层方法
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dtd = $.Deferred();</span><br><span class="line">dtd.resolve();<span class="comment">//成功状态</span></span><br><span class="line">dtd.reject();<span class="comment">//失败状态</span></span><br><span class="line">dtd.notify();<span class="comment">//进行中状态</span></span><br><span class="line"></span><br><span class="line">dtd.done(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)<span class="comment">//触发成功</span></span><br><span class="line">dtd.fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)<span class="comment">//触发失败</span></span><br><span class="line">dtd.progress();<span class="comment">//触发进行中</span></span><br><span class="line"></span><br><span class="line">可以绑定很多执行的，会按照顺序一个一个执行</span><br><span class="line">相当于doneCbs = $.Callbacks()</span><br><span class="line">     failCbs = $.Callbacks()</span><br><span class="line">	 progressCbs = $.Callbacks()</span><br></pre></td></tr></table></figure>
+<p>和ajax的关系</p>
+<p>当触发点击事件的时候，我触发请求，更改deferred的状态</p>
+<p>ajax根据数据获取成功或失败更改状态</p>
+<h2 id="发布与订阅模式"><a href="#发布与订阅模式" class="headerlink" title="发布与订阅模式"></a>发布与订阅模式</h2><p><a href="https://www.cnblogs.com/chris-oil/p/8733249.html" target="_blank" rel="noopener">https://www.cnblogs.com/chris-oil/p/8733249.html</a></p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>原生dom才有nodeType</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/17/jQuery_3/" data-id="cjshkatrb0005mgggu0yx805m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/31/网络知识_2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          网络基础总结2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/11/jQuery_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jQuery基础笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/23/i/">i</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

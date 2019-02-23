@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>HTML5笔记 | 此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="canvas知识点笔记1.对canvas中设定的width以及css设定的width的理解        canvas{            border: 1px solid red;            width: 200px;            height: 200px;        }     这个属性和在css3中的属性不一样，这个属性相当于元素属性 可以直接获取id后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5笔记">
+<meta property="og:url" content="http://yoursite.com/2018/10/01/html5_2/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="canvas知识点笔记1.对canvas中设定的width以及css设定的width的理解        canvas{            border: 1px solid red;            width: 200px;            height: 200px;        }     这个属性和在css3中的属性不一样，这个属性相当于元素属性 可以直接获取id后">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="F:./笔记图片\微信图片_20180927211509.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/01/html5_2/笔记图片/svg图.jpg">
+<meta property="og:updated_time" content="2019-02-23T11:50:26.625Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5笔记">
+<meta name="twitter:description" content="canvas知识点笔记1.对canvas中设定的width以及css设定的width的理解        canvas{            border: 1px solid red;            width: 200px;            height: 200px;        }     这个属性和在css3中的属性不一样，这个属性相当于元素属性 可以直接获取id后">
+<meta name="twitter:image" content="F:./笔记图片\微信图片_20180927211509.png">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-html5_2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/01/html5_2/" class="article-date">
+  <time datetime="2018-10-01T08:28:39.000Z" itemprop="datePublished">2018-10-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>►<a class="article-category-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="canvas知识点笔记"><a href="#canvas知识点笔记" class="headerlink" title="canvas知识点笔记"></a>canvas知识点笔记</h2><h4 id="1-对canvas中设定的width以及css设定的width的理解"><a href="#1-对canvas中设定的width以及css设定的width的理解" class="headerlink" title="1.对canvas中设定的width以及css设定的width的理解"></a>1.对canvas中设定的width以及css设定的width的理解</h4><p><style><br>        canvas{<br>            border: 1px solid red;<br>            width: 200px;<br>            height: 200px;<br>        }<br></style></p>
+<canvas width="400" height="400"></canvas>
+
+
+
+<p>这个属性和在css3中的属性不一样，这个属性相当于元素属性</p>
+<p>可以直接获取id后  id.width获取宽度   但如果想获取css中的话 需要 id.offsetWidth</p>
+<p>200px代表的是dom元素是多少像素，而400代表的是画布的宽是多少高是多少，但是单位不是像素</p>
+<p>canvas 中的400代表画布的宽和高，它没有单位，是相对的单位。</p>
+<p>相当于在宽度为200px像素里面 canvas的宽度是400。</p>
+<p>同时有的话以css中的为准，没有css的就会以画布中的400默认为400px；</p>
+<p>var mycanvas = document.getElementById(“mycanvas”);</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(mycanvas.offsetWidth);（css中的宽度）</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mycanvas.width);（canvas的宽度）</span><br></pre></td></tr></table></figure>
+<p>var ctx = myCanvas.getContent(“2d”);//相当于画笔</p>
+<p>方法：moveTo();</p>
+<h4 id="2-js中获取canvas"><a href="#2-js中获取canvas" class="headerlink" title="2.js中获取canvas"></a>2.js中获取canvas</h4><p><code>var canvas = document.getElementsByTagName(&#39;canvas&#39;)[0];</code><br><code>var ctx = canvas.getContext(&#39;2d’);</code><br><code>注意：Canvas 获取绘画上下文的 api 是 getContext(&quot;2d&quot;)。</code></p>
+<h4 id="3-如何绘制图形"><a href="#3-如何绘制图形" class="headerlink" title="3.如何绘制图形"></a>3.如何绘制图形</h4><p>1、直线<br>moveTo(x, y):画笔挪到(x, y)点<br>lineTo(x, y):画笔划线划到(x, y)点<br>例：moveTo(100,100)<br>   lineTo(200, 100)  rec（100,100,200,200）前两个是坐标，第三个是宽，第四个是高。<br>要使用 stroke()渲染才能画出来<br>2、样式<br>stroke()描边画  （fill是填充渲染）<br>lineWidth = 20;设置线宽<br>strokeStyle = ‘red’线的颜色<br>closePath()闭合路径（可以解决缺口问题）<br>fill()填充画<br>fillStyle = ‘red’;填充颜色<br>注意：如果使用strokeStyle绘制了一个图形，想另外再绘制一个，一定要开辟新路径，因为都是子路径，后面的东西会把前面的颜色给覆盖掉。<br>3、fill和stroke方法都是作用在当前的所有子路径<br>若想开辟新的路径，需要使用beginPath()方法。<br>在绘制新路径之前使用beginPath()<br>4、矩形<br>rect(x, y, w, h);<br>strokeRect(x, y, w, h);（描边画一个矩形）<br>fillRect( x, y, w, h);<br>例如：<br>.strokeStyle=“red”;颜色为红色<br>.strokeRect(100, 100, 100, 200);<br>.fillStyle=“green”；颜色为绿色<br>.fillRect( x, y, w, h);（两个都是另外开辟新的路径，不对其他路径有影响）<br>5、圆形（圆弧）<br>Arc(x, y, r, sAngle, eAngle, c);<br>.arc（200,200,100,0，Math.PI<em>2);//画整个圆，以顺时针方向<br>.arc（200,200,100,0，Math.PI</em>0.5);//四分之一个圆<br>.arc（200,200,100,0，Math.PI*0.5,true);//默认情况下是false，后面的true代表顺时针，false代表逆时针<br>直线边可以直接使用moveTo  lineTo  closePath来画<br>6、曲线：两条切线之间的弧或者曲线<br>arcTo(x1, y1, x2, y2, r);<br>7、二次方、三次方曲线方程<br>quadraticCurveTo(cpx, cpy,x, y);<br>bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x,y);</p>
+<h4 id="4-设置图形的样式"><a href="#4-设置图形的样式" class="headerlink" title="4.设置图形的样式"></a>4.设置图形的样式</h4><p>1、线样式<br>lineWidth: 线条宽度<br>lineCap:  线两头样式 butt/square/round<br> 例如：.lineCap =‘square’<br>lineJoin: 两线拐角处 miter/round/bevel<br>miterLimit: 绘制交点的方式<br>2、渐变：<br>createLinearGradient(x1, y1, x2, y2); 线性渐变</p>
+<p><canvas id="mycavas" width="400" height="400"></canvas><br>例如：<br>var myCavas = document.getElementById(“mycavas”);<br>// console.log(myCavas.offsetWidth);<br>// console.log(myCavas.width);<br>var ctx = myCavas.getContext(“2d”);<br>var bg = ctx.createLinearGradient(100,100,300,300);//起始位置到结束位置<br>bg.addColorStop(0,‘red’);//起始颜色<br>bg.addColorStop(0.5,‘green’);//中间颜色<br>bg.addColorStop(1,’pink’);<br>ctx.fillStyle = bg;//改变成上述设置的颜色<br>ctx.fillRect(0,0,300,300);//填充画图<br>createRadialGradient(x1, y1, r1, x2, y2, r2); 径向渐变。<br>注：transparent透明色<br>3、绘制图案<br>createPattern(img, ‘repeat|repeat-x|repeat-y|no-repeat’);<br>img:图片、画布、视频元素</p>
+<p>注意：等资源加载完</p>
+<h4 id="5-操作图形"><a href="#5-操作图形" class="headerlink" title="5.操作图形"></a>5.操作图形</h4><p>1、translate(dx, dy)   重新映射画布上的 (0,0) 位置（平移）<br>2、scale(sx, sy)   缩放当前绘图<br>3、rotate(Math.PI)   旋转当前的绘图</p>
+<p>注意：以上三个是把整体画布改变，要注意前后顺序，先平移后画图和先画图后平移是不一样的。<br>4、save() restore()  保存当前图像状态的一份拷贝，栈中弹出存储的图形状态并恢复<br>5、setTransform(a, b, c, d, e, f) 变换矩阵，先重置再变换<br>​      参数：水平缩放、水平倾斜、垂直倾斜、垂直缩放、水平移动、垂直移动<br>6、transform(a, b, c, d, e, f) 在之前的基础上变换<br>7、clearRect(x, y, dx, dy); 擦除当前区域<br>8、globalCompositeOperation  组合图形<br>ctx.globalCompositeOperation = ‘source-over’ ;</p>
+<h4 id="6-绘制图像"><a href="#6-绘制图像" class="headerlink" title="6.绘制图像"></a>6.绘制图像</h4><p>1、 drawImage导入图片drawImage(image, x, y); 在画布上定位图像<br>drawImage(image, x, y, width, height); 在画布上定位图像,并规定图像的宽度和高度<br>drawImage(image, sx, sy, swidth, sheight, x, y, width, height); 剪切图像，并在画布上定位被剪切的部分<br>2、getImageData(x, y, dx, dy) // 同源策略<br>每四个是一组<br>3、createImageData(w, h) 创建新的空白 ImageData 对象<br>4、putImageData(imgData, x, y)  将图像数据放回画布上</p>
+<h4 id="7-抽取canvas为图片"><a href="#7-抽取canvas为图片" class="headerlink" title="7.抽取canvas为图片"></a>7.抽取canvas为图片</h4><p>canvas.toDataURL() ; 将canvas的内容抽取成⼀张图片, base64编码格式（抽取整个canvas  toDataURL() 是canvas dom元素方法，不是canvas api方法）<br>注：同源策略的限制，要开启服务器，在www目录下打开<br>将canvas的内容放入img元素里</p>
+<h4 id="8-模糊问题"><a href="#8-模糊问题" class="headerlink" title="8.模糊问题"></a>8.模糊问题</h4><p>1、位图像素放大会失真，canvas为位图像素。<br>2、canvas 绘图时，会从两个物理像素的中间位置开始绘制并向两边扩散 0.5 个物理像素。由于不存在 0.5 个像素，两边都取了1个像素，视觉上就造成了模糊。<br>解决方案：放大再缩小展示</p>
+<h2 id="SVG知识点笔记"><a href="#SVG知识点笔记" class="headerlink" title="SVG知识点笔记"></a>SVG知识点笔记</h2><h4 id="1-svg的使用"><a href="#1-svg的使用" class="headerlink" title="1.svg的使用"></a>1.svg的使用</h4><p>Html中的应用<svg xmlns="http://www.w3.org/2000/svg" version="1.1">有闭合</svg></p>
+<p>Js:<br>​    var char = “<a href="http://www.w3.org/2000/svg&quot;" target="_blank" rel="noopener">http://www.w3.org/2000/svg&quot;</a>;<br>​    var svg = document. createElementNS(char, ‘svg’);</p>
+<p>注：SVG元素对象一般通过调用setAttribute()方法来设定属性值</p>
+<h4 id="2-基础元素"><a href="#2-基础元素" class="headerlink" title="2.基础元素"></a>2.基础元素</h4><p>1、直线<br>​    <line x1="100" y1="100" x2="200" y2="100"></line>（属性不能随便写）<br>2、矩形<br>​    &lt;rect x=”100” y=”100” width=”100” height=”100” rx=”20”ry=”50”&gt;（rx水平位置的圆角，ry垂直位置的圆角）<br>3、圆形<br>​    <circle cx="100" cy="100" r="50"></circle>（中心点和半径）<br>​    <circle cx="100" cy="100" r="50" fill="red"></circle>红色的圆</p>
+<p>4、椭圆<ellipse rx="100" ry="50" cx="250" cy="250"></ellipse>Stroke-width:10px；可以写像素，我控制的就是单独的一个像素。5、多边形&lt;polygon points=”100 100, 70 150, 130 150”</p>
+<p>6、折线<polyline points="0 100, 100 35, 200 150, 300 75, 400 150, 500 20"></polyline></p>
+<p>7、字体（会默认填充的）<br>​    <text x="300" y="300">蝉壳</text></p>
+<h4 id="3-基础样式"><a href="#3-基础样式" class="headerlink" title="3.基础样式"></a>3.基础样式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、fill: transparent;</span><br><span class="line">2、stroke: red;</span><br><span class="line">3、stroke-width: 10px;</span><br><span class="line">4、stroke-opacity/fill-opacity: 0.5;</span><br><span class="line">5、stroke-linecap: butt/round/square;</span><br><span class="line">6、stroke-linejoin:bevel/round/miter;（交点处的样式）</span><br></pre></td></tr></table></figure>
+<h4 id="4-重要元素：路径"><a href="#4-重要元素：路径" class="headerlink" title="4.重要元素：路径"></a>4.重要元素：路径</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;path&gt;元素可以定义一个路径，属性说明如下：</span><br><span class="line">d: 定义路径指令:</span><br><span class="line">例如：&lt;path d=“M 100 100 L 400 100,400 400,100 400”&gt;&lt;/path&gt;</span><br><span class="line">M = moveto 移动到</span><br><span class="line">L = lineto 画线到</span><br><span class="line">H = horizontal lineto 水平线到</span><br><span class="line">V = vertical lineto 垂直线到</span><br><span class="line">C = curveto三次贝塞尔曲线到</span><br><span class="line">S = smooth curveto光滑三次贝塞尔曲线到</span><br><span class="line">Q = quadratic Bezier curve二次贝塞尔曲线到</span><br><span class="line">T = somooth quadratic Bezier curve 光滑二次贝塞尔曲线到</span><br><span class="line">A = elliptical Arc 椭圆弧</span><br><span class="line">&lt;path d=“M 100 100 L 70 120 0 1 1 150 200” stroke=&quot;orange&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;	</span><br><span class="line">注释：M 100 100是起始点  A 70（x轴半径）120（y轴半径）0(旋转角度) 1(取大圆)1(顺时针)</span><br><span class="line">Z = closepath关闭路径（z不区分大小）</span><br><span class="line">注：以上所有命令均允许小写，大写表示绝对定位，小写表示相对定位</span><br></pre></td></tr></table></figure>
+<h4 id="5-路径属相"><a href="#5-路径属相" class="headerlink" title="5.路径属相"></a>5.路径属相</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、stroke-dasharray: 100px;（画多少空多少）</span><br><span class="line">stroke-dasharray: 20px 30px;  画20 空30</span><br><span class="line">stroke-dasharray: 20px 30px 40px;  画20 空30 画40 空20 画30 空40</span><br><span class="line">2、stroke-dashoffset: 15px;（向里面缩）</span><br><span class="line">注：getTotalLength获取路径长度（如果是一个圆呢，无法直接知道长度，无法判断什么时候停止）</span><br><span class="line">只支持path元素，不支持line元素，所以最好使用path来写。</span><br><span class="line">可以画很长，然后把那些缩进去，只展示部分，如果往回缩的话，就不能画太长。</span><br></pre></td></tr></table></figure>
+<h4 id="6-渐变"><a href="#6-渐变" class="headerlink" title="6.渐变"></a>6.渐变</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.线性渐变</span><br><span class="line">&lt;defs&gt;</span><br><span class="line">    &lt;linearGradient id=&quot;bg1&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;0&quot; y2=&quot;100%&quot;&gt;</span><br><span class="line">        &lt;stop offset=&quot;0%&quot; style=&quot;stop-color:rgb(255,255,0);&quot;/&gt;</span><br><span class="line">        &lt;stop offset=&quot;100%&quot; style=&quot;stop-color:rgb(255,0,0);&quot;/&gt;</span><br><span class="line">    &lt;/linearGradient&gt;</span><br><span class="line">&lt;/defs&gt;</span><br><span class="line">&lt;rect x=“0” y=“0” width=“500” height=“500” style=“fill:url(#bg1)”/&gt;（渐变写在了行间）</span><br><span class="line">2.径向渐变</span><br><span class="line">&lt;defs&gt;</span><br><span class="line">    &lt;radialGradient id=&quot;bg2&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot; fx=&quot;50%&quot; fy=&quot;50%&quot;&gt;</span><br><span class="line">        &lt;stop offset=&quot;0%&quot; style=&quot;stop-color:green;&quot;/&gt;</span><br><span class="line">        &lt;stop offset=&quot;100%&quot; style=&quot;stop-color:red;&quot;/&gt;</span><br><span class="line">    &lt;/radialGradient&gt;</span><br><span class="line">&lt;/defs&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="7-viewbox"><a href="#7-viewbox" class="headerlink" title="7.viewbox"></a>7.viewbox</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1、viewBox属性</span><br><span class="line">&lt;svg width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0,0,40,30&quot; style=&quot;border:1px solid #cd0000;&quot;&gt;</span><br><span class="line">    &lt;rect x=&quot;10&quot; y=&quot;5&quot; width=&quot;20&quot; height=&quot;15&quot; fill=&quot;#cd0000&quot;/&gt;</span><br><span class="line">&lt;/svg&gt;</span><br><span class="line">viewBox=“0,0,40,30”如果存在的话，那么里面的元素就会以这个单位为准。</span><br><span class="line">宽40 高30</span><br><span class="line">2、preserveAspectRatio(作用的对象都是viewBox) </span><br><span class="line">	Svg 一定会按比例放置，默认情况下是居中的</span><br><span class="line">preserveAspectRatio=“xMidYMid meet”</span><br><span class="line">参数1：viewBox在svg中对齐方式</span><br><span class="line">参数2：高宽比</span><br><span class="line">meet:保持纵横比缩放viewBox适应viewport</span><br><span class="line">slice:保持纵横比同时比例小的方向放大填满viewport</span><br><span class="line">(在均匀缩放的同时保持viewbox的宽高比)</span><br><span class="line">none: 不保持自己的宽高，扭曲纵横比以充分适应viewport</span><br></pre></td></tr></table></figure>
+<h2 id="Drag-Drop拖放知识点笔记"><a href="#Drag-Drop拖放知识点笔记" class="headerlink" title="Drag Drop拖放知识点笔记"></a>Drag Drop拖放知识点笔记</h2><p>一组API简化了鼠标操作</p>
+<h4 id="1-拖放API基础"><a href="#1-拖放API基础" class="headerlink" title="1.拖放API基础"></a>1.拖放API基础</h4><p>1、dragstart 被拖放元素 开始被拖拽时触发<br>2、drag 被拖放元素 在拖拽的过程中触发<br>3、dragend 被拖放元素 拖拽完成时<br>​    以上三个事件是绑定在被拖拽元素上的，给被拖拽元素draggable=“true” 才可以有拖拽的效果。<br>4.dragenter 目标元素 拖放元素进入目标元素时<br>​    会以鼠标的位置为准<br>5、dragover 目标元素 拖放元素在目标元素上时<br>6、dragleave 目标元素 拖放元素在目标元素上离开<br>7、drop 目标元素 被拖放的元素在目标元素上同时鼠标放开触发的事件<br>​    注：需要阻止dragover的默认行为才会触发drop事件 （ 一般都监听drop很少监听leave事件）</p>
+<h4 id="2-DataTransfer对象"><a href="#2-DataTransfer对象" class="headerlink" title="2.DataTransfer对象"></a>2.DataTransfer对象</h4><p>1、getData()从DataTransfer对象中读取数据   鼠标在目标区域松开的时候，取数据<br>2、setData()向DataTransfer对象中存放数据   当鼠标按下，元素被拖拽的时候</p>
+<h2 id="刮刮乐视频学习笔记"><a href="#刮刮乐视频学习笔记" class="headerlink" title="刮刮乐视频学习笔记"></a>刮刮乐视频学习笔记</h2><p>1.使用把图片放在canvas中去？</p>
+<p>绘制图案     createPattern(img, ‘repeat|repeat-x|repeat-y|no-repeat’);  img:图片、画布、视频元素</p>
+<p>注意：等资源加载完</p>
+<p>2.获取canvas的宽度时，是获取offsetWidth还是获取width？width</p>
+<p>offsetWidth 是获取的在css中设置的只是表示在页面中展示的是多大而已。</p>
+<p>在画图的时候，看的是画布的宽度。</p>
+<p>3.擦出区域采用的是采用的是新旧像素合并的方法   globalCompositeOperation = ‘destination-out’ 组合图形</p>
+<p>这种方法 新像素会把之前所有的像素删除。只要是在画布上画的都会删除。</p>
+<p>所以上述第一步的图片引入是不可取的，我们采用背景图片的形式引入图片。</p>
+<p>4.需要等背景图片加载完，如果是直接给了背景图片，那样就无法等待图片加载完。</p>
+<p>所以先new一个Image  ，给图片添加src ，只要给图片添加了src属性就会发送请求这张图片，之后便可以去判断是否请求成功。img.onload</p>
+<p>5.鼠标按下可以在canvas上移动删除，鼠标抬起就不能继续删除。给canvas绑定事件。</p>
+<p>6.鼠标抬起的时间不能在外面写（全局），不管在什么位置只要抬起鼠标都会取消移动事件。</p>
+<p>7.判断擦出的区域，当鼠标抬起时进行判断，如果放在移动的函数里面，会执行很多次判断，所以每次在鼠标抬起进行判断。只需要判断每个像素点是不是透明的。</p>
+<p>8.断点，用为mousemove移动的太快，不够灵敏导致的。所以考虑把当前端点和上一个端点连接在一起，就可以实现其经过的路被擦除。</p>
+<h2 id="做刮刮乐出现的相关问题"><a href="#做刮刮乐出现的相关问题" class="headerlink" title="做刮刮乐出现的相关问题"></a>做刮刮乐出现的相关问题</h2><h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><p>在css中引用image时候：需要退出当前css文件，例如background-image: url(“../images/2.jpg”);</p>
+<p>当我在js中去改变背景的时候  是相对于html 因为你这个元素在HTML中，所以是</p>
+<p> myCanvas.style.backgroundImage = “url(images/1.jpg)”;                       </p>
+<h3 id="问题二："><a href="#问题二：" class="headerlink" title="问题二："></a>问题二：</h3><p>当鼠标在canvas区域按下的时候就应该有个小圆出现。在鼠标按下后，鼠标移动也是在画圆，需要开辟新路径，且其鼠标的值也要重新更新。否则会出现下图<img src="F:./笔记图片\微信图片_20180927211509.png" alt></p>
+<h3 id="问题三：答疑课程强调的"><a href="#问题三：答疑课程强调的" class="headerlink" title="问题三：答疑课程强调的"></a>问题三：答疑课程强调的</h3><p>鼠标抬起事件如果绑定在canvas上，那么如果鼠标在body中抬起了鼠标，无法触发mouseup事件，相应的就无法取消mouseover事件，那么当鼠标再次移动回到canvas的时候，就会继续mouseover事件。</p>
+<p>另外，如果body固定宽度且设置太小的话，那么我移出了body区域的时候松开鼠标，也是不会触发mouseup事件，相应的也无法取消mouseover事件。</p>
+<h2 id="SVG动画制作相关问题"><a href="#SVG动画制作相关问题" class="headerlink" title="SVG动画制作相关问题"></a>SVG动画制作相关问题</h2><h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p><img src=".\笔记图片\svg图.jpg" alt></p>
+<h4 id="使用animate标签"><a href="#使用animate标签" class="headerlink" title="使用animate标签"></a>使用animate标签</h4><animate attributename="opacity" from="0" to="1" begin="0s" dur="0.6s" repeatcount="indefinite"></animate>
+
+<p> repeatCount=“indefinite“ 表示这个动画会一直执行</p>
+<p>attributeName  动画的属性是什么  向右走动画的是x坐标  from从什么地方到to什么地方  begin开始时间  dur运动总时长   </p>
+<p>1.第四个图画，不仅要改变height还要改变y的值，观察黄色图案距离上端的距离为黑盒子的一半减去黄盒子的一半，得到y初始位置</p>
+<p>第二图   里面的黄盒子要运动到的y值为0；</p>
+<p>所以其反复运动的范围为 values1=（7；0；7）</p>
+<p>2.另一个问题就是其高度问题</p>
+<p>起初高度设置为6，再观察黄色盒子最大为充满黑色盒子20  所以最大为20 再到7  values=（6；20；6）</p>
+<h2 id="拖拽删除案例时遇到的问题"><a href="#拖拽删除案例时遇到的问题" class="headerlink" title="拖拽删除案例时遇到的问题"></a>拖拽删除案例时遇到的问题</h2><h3 id="问题一：-1"><a href="#问题一：-1" class="headerlink" title="问题一："></a>问题一：</h3><p>var drag = document.getElementsByClassName(“drag”)[0];<br>​        var dragLi = drag.getElementsByTagName(“li”);<br>​        var target = document.getElementsByClassName(“target”)[0];<br>​        for(var i = 0; i &lt; dragLi.length; i++){<br>​            console.log(i);<br>​            dragLi[i].addEventListener(“dragstart”,function(e){<br>​                var dt = e.dataTransfer;<br>​                dt.setData(“name”,this.className);<br>​                console.log(“hh”);<br>​            });<br>​        }<br>​       target.addEventListener(“dragover”,function(e){<br>​           e.preventDefault();<br>​       });</p>
+<p>其中在dt.setData(“name”,this.className);  出了问题，我其实也不太明白是啥原因</p>
+<p>起初我使用的是dt.setData(“name”,dragLi[i].className);出错，console.log(dragLi[i].className)也是说没有这个className属性  </p>
+<p>原因：在for循环的时候，我还没有去触发事件所以里面的函数不会执行，当去执行函数的时候，for循环已经结束，且此时的i=5已经大于li的索引值，所以即使我去使用dragLi[i].className也是没有对应的第六个值给我取。</p>
+<p>当我使用this.className时候，this直接指向的是调用函数的那个对象。</p>
+<p>解决方法：在for循环中使用立即执行函数(function(){})(i);  </p>
+<p>立即函数每次传的都是最初的索引值，固定了的，不能及时更新。所以每次在插入元素之前要重新遍历一下。</p>
+<h2 id="问题二：-1"><a href="#问题二：-1" class="headerlink" title="问题二："></a>问题二：</h2><p>在使用封装函数的时候，必须调用才可以执行。</p>
+<p> function bindEvent(){<br>​            for(var i = 0; i &lt; dragLi.length; i++){<br>​                (function(j){<br>​                    dragLi[j].addEventListener(“dragstart”,function(e){<br>​                            var dt = e.dataTransfer;<br>​                            dt.setData(“index”, j);<br>​                         });<br>​                    })(i);<br>​              }<br>​    }</p>
+<p>bindEvent();</p>
+<h2 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h2><p>实现功能：在移动li的时候，使被拖动的li移动到目标li之前</p>
+<p>逻辑思路：被拖动的是li，目标也是li，难点在如何把当前拖动的li放在目标li之前</p>
+<p>使用insertBefore(this,li);每次移动li的index都需要更新一下，所以不能使用立即函数。</p>
+<p>每次执行前先遍历一次li，相当于更新一下index</p>
+<p>function finIndex(dom,list){<br>​            for(var i = 0; i &lt; dragLi.length; i++){<br>​                    if(dragLi[i]==dom){<br>​                            return i;<br>​                    }<br>​            }<br>  }</p>
+<p>此时在dragstart事件调用这个函数。</p>
+<p>dragLi[i].addEventListener(“dragstart”,function(e){<br>​                    var dt = e.dataTransfer;<br>​                    var index = finIndex(this,dragLi);<br>​                    dt.setData(“data”, index);<br>});</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/01/html5_2/" data-id="cjshkau730019mggge8fgfqsl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/11/html5_3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTML5笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/26/html5_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML5笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/23/i/">i</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS3笔记 | 此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Bootstrap快速使用(1)、什么是BootstrapBootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。(2)、特点 虽然可以直接使用 Bootstrap 提供的 CSS 样式表，但Bootstrap 的源码是基于最流行的 CSS 预处理脚本 Less和 Sass 开发的。你可以采用预编译的 CSS 文件快速开发，也可以从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3笔记">
+<meta property="og:url" content="http://yoursite.com/2018/10/31/css3_3/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="1.Bootstrap快速使用(1)、什么是BootstrapBootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。(2)、特点 虽然可以直接使用 Bootstrap 提供的 CSS 样式表，但Bootstrap 的源码是基于最流行的 CSS 预处理脚本 Less和 Sass 开发的。你可以采用预编译的 CSS 文件快速开发，也可以从">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/10/31/css3_3/transform1.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/31/css3_3/transform2.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/31/css3_3/transition1.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/31/css3_3/math.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/31/css3_3/animation1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/31/css3_3/animation2.jpg">
+<meta property="og:updated_time" content="2019-02-23T12:21:06.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3笔记">
+<meta name="twitter:description" content="1.Bootstrap快速使用(1)、什么是BootstrapBootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。(2)、特点 虽然可以直接使用 Bootstrap 提供的 CSS 样式表，但Bootstrap 的源码是基于最流行的 CSS 预处理脚本 Less和 Sass 开发的。你可以采用预编译的 CSS 文件快速开发，也可以从">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/31/css3_3/transform1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css3_3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/31/css3_3/" class="article-date">
+  <time datetime="2018-10-31T08:28:39.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>►<a class="article-category-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-Bootstrap快速使用"><a href="#1-Bootstrap快速使用" class="headerlink" title="1.Bootstrap快速使用"></a>1.Bootstrap快速使用</h2><p>(1)、什么是Bootstrap<br>Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。<br>(2)、特点<br> 虽然可以直接使用 Bootstrap 提供的 CSS 样式表，但Bootstrap 的源码是基于最流行的 CSS 预处理脚本 Less和 Sass 开发的。你可以采用预编译的 CSS 文件快速开发，也可以从源码定制自己需要的样式。<br> 你的网站和应用能在 Bootstrap 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。<br> Bootstrap 提供了全面、美观的文档。你能在这里找到关于 HTML 元素、HTML 和 CSS 组件、jQuery 插件方面的所有详细文档。</p>
+<h2 id="2-transform形状变换"><a href="#2-transform形状变换" class="headerlink" title="2.transform形状变换"></a>2.transform形状变换</h2><p>transform属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行移动、缩放、旋转或倾斜。</p>
+<h3 id="1-移动-translate"><a href="#1-移动-translate" class="headerlink" title="(1).移动:translate"></a>(1).移动:translate</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">translate</span>() 括号里可以是像素值也可以是百分比(相对自身而言的，挪动自己宽度的百分比，<span class="selector-tag">x</span>轴相对于宽，<span class="selector-tag">y</span>轴相对于高度) 如果图形是1：1的可设置其中一个即可达到两个都设置的效果。不仅是等比的，所有的图形，设置其中一个，另一个也会等比的缩放，但是不可以两个分开设置，会覆盖。</span><br><span class="line">要写在一起<span class="selector-tag">transform</span>：<span class="selector-tag">translateX</span>() <span class="selector-tag">translateY</span>();</span><br><span class="line">之前写的居中，要知道盒子的大写，才能写挪动自己的一半。不知道盒子的高和宽，依旧可以挪到自身的一半。</span><br><span class="line">而使用<span class="selector-tag">transform</span>：<span class="selector-tag">translateX</span>(50%) <span class="selector-tag">translateY</span>(50%);</span><br><span class="line">1<span class="selector-class">.translateX</span>()</span><br><span class="line">2<span class="selector-class">.translateY</span>()</span><br><span class="line">3<span class="selector-class">.translateZ</span>()垂直于屏幕的角度，也就是离我们的距离的远近。正为前（变大）负为后（变小）</span><br><span class="line">4<span class="selector-class">.translate3d</span>(<span class="selector-tag">x</span>,<span class="selector-tag">y</span>,<span class="selector-tag">z</span>)</span><br><span class="line">简写：<span class="selector-tag">translate</span>()<span class="selector-tag">translate</span>(<span class="selector-tag">x</span>,<span class="selector-tag">y</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="2-缩放"><a href="#2-缩放" class="headerlink" title="(2).缩放"></a>(2).缩放</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">scaleX</span>()</span><br><span class="line"><span class="selector-tag">scaleY</span>()</span><br><span class="line"><span class="selector-tag">scaleZ</span>()</span><br><span class="line"><span class="selector-tag">scale3d</span>(<span class="selector-tag">x</span>,<span class="selector-tag">y</span>,<span class="selector-tag">z</span>)</span><br><span class="line">简写：scale(x,y) | scale(n)scale(n,n)</span><br></pre></td></tr></table></figure>
+<h3 id="3-旋转"><a href="#3-旋转" class="headerlink" title="(3).旋转"></a>(3).旋转</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">rotateY</span>()</span><br><span class="line"><span class="selector-tag">rotateZ</span>()</span><br><span class="line"><span class="selector-tag">rotate3d</span>(<span class="selector-tag">x</span>,<span class="selector-tag">y</span>,<span class="selector-tag">z</span>)</span><br><span class="line">简写：<span class="selector-tag">rotate</span>() <span class="selector-tag">-</span>&gt; <span class="selector-tag">rotateZ</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="4-倾斜"><a href="#4-倾斜" class="headerlink" title="(4).倾斜"></a>(4).倾斜</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">skewX</span>(<span class="selector-tag">ndeg</span>)</span><br><span class="line"><span class="selector-tag">skewY</span>(<span class="selector-tag">ndeg</span>)</span><br><span class="line"><span class="selector-tag">scale3d</span>(<span class="selector-tag">x</span>,<span class="selector-tag">y</span>)</span><br><span class="line">简写：<span class="selector-tag">skew</span>(<span class="selector-tag">x</span>, <span class="selector-tag">y</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="5-transform-origin"><a href="#5-transform-origin" class="headerlink" title="(5).transform-origin"></a>(5).transform-origin</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform-origin</span>设置元素原点位置</span><br><span class="line"><span class="selector-tag">transform-origin</span>: 50% 50% 0;默认值</span><br><span class="line">X轴方向：left | center | right | length | %</span><br><span class="line">Y轴方向：top | center | bottom | length | %</span><br><span class="line"><span class="selector-tag">Z</span>轴方向：<span class="selector-tag">length</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-perspective属性（给父级设置的）"><a href="#6-perspective属性（给父级设置的）" class="headerlink" title="(6).perspective属性（给父级设置的）"></a>(6).perspective属性（给父级设置的）</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">定义 3<span class="selector-tag">D</span> 元素距视图的距离，以像素计。当为元素定义 <span class="selector-tag">perspective</span> 属性时，其子元素会获得透视效果，而不是元素本身。</span><br><span class="line">&lt;div class="box"&gt;</span><br><span class="line">    &lt;div class="item one"&gt;one&lt;/div&gt;</span><br><span class="line">    &lt;div class="item two"&gt;two&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">1.空间距离（从视觉感知方面，对应的值小，图相对小一些，对应的值大，图相对大一些。）</span><br><span class="line">2.是否保留空间的3<span class="selector-tag">d</span>效果</span><br><span class="line">设置景深后，虽然看起来有视觉效果，但是在默认的情况下是保留2<span class="selector-tag">d</span>平面的位置，若要3<span class="selector-tag">d</span>图形的位置，需要对父级元素也就是上面的<span class="selector-tag">box</span>添加<span class="selector-tag">transform-style</span>：<span class="selector-tag">preserve-3d</span>；指定嵌套的元素（也就是被设置这个性质元素的子元素）的效果，如果子元素保留了3<span class="selector-tag">d</span>的空间，那么子元素就会超出父元素（<span class="selector-tag">z</span>轴），此时就不可以设置<span class="selector-tag">overflow</span>：<span class="selector-tag">hidden</span>；</span><br><span class="line">3.想让两个子元素旋转，使<span class="selector-tag">box</span>旋转即可，就可以不一一设置子元素的旋转。</span><br><span class="line"> 那么是使用<span class="selector-tag">animation</span>（可以设置次数），还是<span class="selector-tag">transition</span>（只是一个过渡，从某个值到某个值，无法设置次数），所以选择<span class="selector-tag">animation</span>。</span><br><span class="line">设置好关键帧，将这个关键帧给要旋转的元素添加<span class="selector-tag">animation</span>：关键帧名字 运动时间 运动方式 次数；等这些性质。</span><br></pre></td></tr></table></figure>
+<p><strong>问题：为什么有的面大，有的面小呢？</strong><br>在当前的景深条件下，前面的就是大，后面的就是小,只给box设置了景深，那么即只有box里面的元素有空间感觉，box以外的元素是没有的。而box就是一个平面图形，只有它里面的元素有空间效果（距离近的大，距离远的小）。<br><strong>如何解决：</strong><br>给box的父级添加景深，使box也有景深效果。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=“wrapper"&gt;</span><br><span class="line">    &lt;div class="box"&gt;</span><br><span class="line">        &lt;div class="item one"&gt;one&lt;/div&gt;</span><br><span class="line">        &lt;div class="item two"&gt;two&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>即使这样添加也无法解决视觉上的前面打后面小的问题。<br><strong>真正导致的原因</strong>：在这里box设置了景深，其父级也设置了景深，当给一个元素设置景深的时候，就是使其变成梯形。从而导致离近的大，离远的小。所以这里既是给box的父级设置了景深，而box本身就是一个梯形，它具有前面大后面小的性质，无论如何旋转也无法改变这个大小问题。<br><strong>真正的解决办法</strong>：将box元素的景深取消，只给其父级设置景深。<br><strong>总结</strong>：若想给规则的box旋转，一定不能让你变成梯形，那么就给其父级添加景深。以确保自己依旧是个规则的图形。<br><strong>问题：不给设置景深的元素设置宽度，从视觉效果看就会时倾斜的。</strong><br><strong>原因：</strong>默认从中间看图<br><strong>解决办法</strong>：调整视点的位置 perspective-origin：100px 100px ；默认是50% 50% 如右图所示，所以会倾斜。</p>
+<h3 id="7-perspective-origin属性"><a href="#7-perspective-origin属性" class="headerlink" title="(7).perspective-origin属性"></a>(7).perspective-origin属性</h3><img src="/2018/10/31/css3_3/transform1.png">
+<p>如上图所示，红点的位置就是默认的原始观察点。</p>
+<h3 id="8-translate3d-x-y-z-n"><a href="#8-translate3d-x-y-z-n" class="headerlink" title="(8).translate3d(x,y,z,n)"></a>(8).translate3d(x,y,z,n)</h3><img src="/2018/10/31/css3_3/transform2.png">
+<p>其实就是合力的方向作为旋转轴。</p>
+<h3 id="9-transform-style-被嵌套的元素"><a href="#9-transform-style-被嵌套的元素" class="headerlink" title="(9).transform-style (被嵌套的元素)"></a>(9).transform-style (被嵌套的元素)</h3><p>指定嵌套元素是怎样在三维空间中呈现<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">transform-style: flat|preserve-3d;</span><br><span class="line">注：设置了<span class="selector-tag">transfrom-style</span><span class="selector-pseudo">:preserve-3d</span>的元素，不能防止子元素溢出，即不能设置<span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>；否则<span class="selector-tag">persever-3d</span>失效；</span><br></pre></td></tr></table></figure></p>
+<h3 id="10-backface-visibility"><a href="#10-backface-visibility" class="headerlink" title="(10).backface-visibility"></a>(10).backface-visibility</h3><p> 属性定义当元素背面是否可见。 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">backface-visibility: visible | hidden;</span><br></pre></td></tr></table></figure>
+<h2 id="2-transition过渡动画"><a href="#2-transition过渡动画" class="headerlink" title="2.transition过渡动画"></a>2.transition过渡动画</h2><h3 id="1-transition"><a href="#1-transition" class="headerlink" title="(1).transition"></a>(1).transition</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">property</span> <span class="selector-tag">duration</span> <span class="selector-tag">timing-function</span> <span class="selector-tag">delay</span>;</span><br><span class="line"><span class="selector-tag">transition-property</span> 规定设置过渡效果的 <span class="selector-tag">CSS</span> 属性的名称。</span><br><span class="line"><span class="selector-tag">transition-duration</span> 规定完成过渡效果需要多少秒或毫秒。</span><br><span class="line"><span class="selector-tag">transition-timing-function</span> 规定速度效果的速度曲线。</span><br><span class="line"><span class="selector-tag">transition-delay</span> 定义过渡效果何时开始。</span><br></pre></td></tr></table></figure>
+<h3 id="2-transition-property"><a href="#2-transition-property" class="headerlink" title="(2).transition-property"></a>(2).transition-property</h3><p> 规定设置过渡效果的 CSS 属性的名称。<br> <img src="/2018/10/31/css3_3/transition1.png"></p>
+<p>只有具有值的属性才可以设置这个属性，color是可以的。display：none等是没有的。</p>
+<h3 id="3-transition-timing-function"><a href="#3-transition-timing-function" class="headerlink" title="(3).transition-timing-function"></a>(3).transition-timing-function</h3><p> 规定设置过渡效果的CSS 属性的名称</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">transition-timing-function: linear | ease | ease-in | ease-out | ease-in-out | cubic-</span><br><span class="line"><span class="selector-tag">bezier</span>(<span class="selector-tag">n</span>,<span class="selector-tag">n</span>,<span class="selector-tag">n</span>,<span class="selector-tag">n</span>);</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">linear</span> 匀速, <span class="selector-tag">cubic-bezier</span>(0,0,1,1) </span><br><span class="line"><span class="selector-tag">ease</span> 慢快慢， <span class="selector-tag">cubic-bezier</span>(0<span class="selector-class">.25</span>,0<span class="selector-class">.1</span>,0<span class="selector-class">.25</span>,1) </span><br><span class="line"><span class="selector-tag">ease-in</span> 慢速开始的过渡， <span class="selector-tag">cubic-bezier</span>(0<span class="selector-class">.42</span>,0,1,1) </span><br><span class="line"><span class="selector-tag">ease-out</span> 慢速结束的过渡， <span class="selector-tag">cubic-bezier</span>(0,0,0<span class="selector-class">.58</span>,1) </span><br><span class="line"><span class="selector-tag">ease-in-out</span> 慢速开始和结束的过渡， <span class="selector-tag">cubic-bezier</span>(0<span class="selector-class">.42</span>,0,0<span class="selector-class">.58</span>,1) </span><br><span class="line"><span class="selector-tag">cubic-bezier</span>(<span class="selector-tag">n</span>,<span class="selector-tag">n</span>,<span class="selector-tag">n</span>,<span class="selector-tag">n</span>) 在 <span class="selector-tag">cubic-bezier</span> 函数中定义自己的值。可能的值是 0 ~1 之间的数值</span><br></pre></td></tr></table></figure>
+<h2 id="3-animation属性"><a href="#3-animation属性" class="headerlink" title="3.animation属性"></a>3.animation属性</h2><p>animation 属性是一个简写属性，用于设置动画属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">1<span class="selector-class">.animation-name</span> 规定需要绑定到选择器的 <span class="selector-tag">keyframe</span> 名称。</span><br><span class="line">2<span class="selector-class">.animation-duration</span> 规定完成动画所花费的时间，以秒或毫秒计。</span><br><span class="line">3<span class="selector-class">.animation-timing-function</span> 规定动画的速度曲线。</span><br><span class="line">4<span class="selector-class">.animation-delay</span> 规定在动画开始之前的延迟。</span><br><span class="line">5<span class="selector-class">.animation-iteration-count</span> 规定动画应该播放的次数。</span><br><span class="line">6<span class="selector-class">.animation-direction</span> 规定是否应该轮流反向播放动画。</span><br><span class="line">7<span class="selector-class">.animation-fill-mode</span> 属性规定动画在播放之前或之后，其动画效果是否可见。</span><br><span class="line">8<span class="selector-class">.animation-play-state</span> 属性规定动画正在运行还是暂停。</span><br><span class="line"></span><br><span class="line">注：设置完关键帧后，想让那个元素运动就在哪个元素下设置<span class="selector-tag">animation</span>,并设置以上属性</span><br><span class="line">@<span class="keyword">keyframes</span> move&#123;</span><br><span class="line">  0%&#123;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">100px</span>;</span><br><span class="line">   &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line">     <span class="attribute">left</span>: <span class="number">600px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">中间也可以添加百分数，那样就会前一半的时间运动到添加百分数设置的位置，后一半的时间运动到终点。</span><br><span class="line">如果只有0%<span class="selector-tag">-100</span>%两个关键帧可以使用<span class="selector-tag">from</span> <span class="selector-tag">to</span>分别代替 0%和100%</span><br><span class="line">注：如果开始的位置时元素默认的位置，是可以不用写0%。若默认为100<span class="selector-tag">px</span>，而我设置0%的时候为300<span class="selector-tag">px</span>就会在300<span class="selector-tag">px</span>开始运动，运动完就回到初始的位置了。如果不想回到初始位置可以使用<span class="selector-tag">animation-fill-mode</span>中的<span class="selector-tag">forward</span>属性等来控制。</span><br><span class="line">9<span class="selector-class">.animation-iteration-count</span> 规定动画应该播放的次数<span class="selector-tag">n</span> 播放<span class="selector-tag">n</span> <span class="selector-tag">infinite</span> 无限次</span><br><span class="line">10<span class="selector-class">.animation-direction</span> 规定是否应该轮流反向播放动画。</span><br><span class="line">   <span class="selector-tag">normal</span> 默认值，按照顺序正常播放</span><br><span class="line">   <span class="selector-tag">reverse</span> 动画反向播放</span><br><span class="line">   <span class="selector-tag">alternate</span> 动画在奇数次正向，偶数次反向播放</span><br><span class="line">   <span class="selector-tag">alternate-reverse</span> 动画在奇数次反向，偶数次正向播放</span><br><span class="line">11<span class="selector-class">.animation-fill-mode</span> 规定动画在播放之前或之后，其动画效果是否可见。</span><br><span class="line">  <span class="selector-tag">none</span>不改变默认行为。</span><br><span class="line">  <span class="selector-tag">forwards</span>当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。</span><br><span class="line">  <span class="selector-tag">backwards</span>在 <span class="selector-tag">animation-delay</span> 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。</span><br><span class="line">  <span class="selector-tag">both</span>向前和向后填充模式都被应用。</span><br><span class="line">12<span class="selector-class">.animation-play-state</span> 属性规定动画正在运行还是暂停。</span><br><span class="line">  <span class="selector-tag">paused</span> 规定动画已暂停。</span><br><span class="line">  <span class="selector-tag">running</span> 规定动画正在播放。</span><br></pre></td></tr></table></figure>
+<h2 id="4-感知鼠标滑过方向图片遮罩效果"><a href="#4-感知鼠标滑过方向图片遮罩效果" class="headerlink" title="4.感知鼠标滑过方向图片遮罩效果"></a>4.感知鼠标滑过方向图片遮罩效果</h2><img src="/2018/10/31/css3_3/math.png">
+<h1 id="二-快速搭建bootstrap网页要注意的问题"><a href="#二-快速搭建bootstrap网页要注意的问题" class="headerlink" title="二.快速搭建bootstrap网页要注意的问题"></a>二.快速搭建bootstrap网页要注意的问题</h1><h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><p>请注意，<strong>Bootstrap 的所有 JavaScript 插件都依赖 jQuery，</strong>因此 jQuery 必须在 Bootstrap 之前引入Bootstrap 。</p>
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><p>引入jquery文件的时候必须命名为 jquery.js</p>
+<h1 id="三-动画练习项目笔记"><a href="#三-动画练习项目笔记" class="headerlink" title="三.动画练习项目笔记"></a>三.动画练习项目笔记</h1><h2 id="问题一-1"><a href="#问题一-1" class="headerlink" title="问题一"></a>问题一</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">起初我使用的是</span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span>发现我左右下移除的时候没有什么问题，但是向上移除的时候，是可以看到文本内容的。所以需要嵌套一个div，使用其overflow：hidden；这个属性，那么当content区域超过父级div的范围后就不显示了。</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"textbox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="问题二-1"><a href="#问题二-1" class="headerlink" title="问题二"></a>问题二</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line"><span class="keyword">var</span> len = oLi.length;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">    oLi[i].onmouseenter = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> dir = getDirection(e,<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">var</span> oTxt = <span class="keyword">this</span>.getElementsByClassName(<span class="string">'content'</span>)[<span class="number">0</span>];</span><br><span class="line">        oTxt.className = <span class="string">'content'</span>;</span><br><span class="line">        <span class="keyword">switch</span>(dir)&#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">0</span>: oTxt.classList.add(<span class="string">'inup'</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">1</span>: oTxt.classList.add(<span class="string">'inright'</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">2</span>: oTxt.classList.add(<span class="string">'inbottom'</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">3</span>: oTxt.classList.add(<span class="string">'inleft'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">    &#125;</span><br><span class="line">注：function里面的i打印出来始终是6 ，但是其外面的i还是一一遍历的，是从0开始，所以可以使用 oLi[i].onmouseenter。但是在function函数里面的i一直都是6，因为在绑定事件的时候是从0一个一个绑定的，绑定完成之后i已经变成6了。然后才能去实现触发事件，所以在function里面的不能使用oLi[i],而只能使用this去指触发事件的这个oLi[i]。</span><br><span class="line">后面要注意的是添加<span class="class"><span class="keyword">class</span>类名的时候，记得将前面的<span class="title">class</span>清楚一下，避免叠加。</span></span><br></pre></td></tr></table></figure>
+<h2 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDirection</span>(<span class="params">e,ele</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> w = ele.offsetWidth;</span><br><span class="line">    <span class="keyword">var</span> h = ele.offsetHeight;</span><br><span class="line">    <span class="keyword">var</span> x = (e.offsetX - w/<span class="number">2</span>)*(w &gt; h ? h/w : <span class="number">1</span>);<span class="comment">//前部分是使这个图形的中心移动到坐标轴的中心位点，这样才得以使用公式。判断宽是否大于高，若大于就乘以宽高之比。压缩成正方形</span></span><br><span class="line">    <span class="keyword">var</span> y = (e.offsetY - h/<span class="number">2</span>)*(h &gt; w ? w/h : <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> d = (<span class="built_in">Math</span>.round((<span class="built_in">Math</span>.atan2(y,x)*(<span class="number">180</span>/<span class="built_in">Math</span>.PI)+<span class="number">180</span>)/<span class="number">90</span> + <span class="number">3</span>))%<span class="number">4</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.获取位置的时候，初始默认的不在坐标轴的正中心，所以要讲获取到的位置减去自身高度或宽度的一半才可以运用公式去判断进入/出去的方向。如下图所示<br><img src="/2018/10/31/css3_3/animation1.jpg"><br>2.对于长方形而言，需要将其压缩成正方形，对其较长的宽或高进行压缩。也就是上述代码中的x,y等式的后面部分。对于宽较长的长方形使其宽乘以高宽比。对于高较长的长方形使其高乘以宽高比。这样就可以实现压缩，成为我们想要的正方形。</p>
+<h2 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.inbottom</span>,<span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.outbottom</span>&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(0,100%);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.inup</span>,<span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.outup</span>&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(0,-100%);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.inleft</span>,<span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.outleft</span>&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-100%,0);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.inright</span>,<span class="selector-tag">li</span> <span class="selector-class">.textbox</span> <span class="selector-class">.outright</span>&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(100%,0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2018/10/31/css3_3/animation2.jpg">
+<p>注：上图下部分文本区域的值就相当于原始位置（0,0）。那么结合上面的代码可知，向上移出区域为-100%，下为正的100%，左面为负的100%，右面为正的100%。</p>
+<h2 id="问题五"><a href="#问题五" class="headerlink" title="问题五"></a>问题五</h2><p>dom元素样式变化的时候，最好是以添加class类名的方式来实现，新的class定义好要变化的样式，使用js更改class名就可以。</p>
+<h1 id="四-旋转图片项目笔记"><a href="#四-旋转图片项目笔记" class="headerlink" title="四.旋转图片项目笔记"></a>四.旋转图片项目笔记</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1.图形旋转，坐标轴也跟着旋转，<span class="selector-tag">z</span>轴始终跟着图片垂直，无论怎么变，坐标轴一直跟着变化，相对的位置是不会 变化的。</span><br><span class="line">沿着<span class="selector-tag">y</span>旋转，逆时针旋转。60度 120度。。。</span><br><span class="line">2. @<span class="keyword">keyframes</span> move&#123;</span><br><span class="line">    0%&#123;</span><br><span class="line">         <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(0) <span class="built_in">rotateX</span>(-20deg);</span><br><span class="line">      &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">          <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(360deg) <span class="built_in">rotateX</span>(-20deg);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">上面是沿着<span class="selector-tag">Y</span>轴每旋转完一次，<span class="selector-tag">X</span>轴旋转<span class="selector-tag">-20</span>度。(自己理解的)</span><br><span class="line">@<span class="keyword">keyframes</span> move&#123;</span><br><span class="line">     0%&#123;</span><br><span class="line">           transform：rotateX(-20deg) : rotateY(0) ;</span><br><span class="line">       &#125;</span><br><span class="line">     100%&#123;</span><br><span class="line">          <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(-20deg) <span class="built_in">rotateY</span>(360deg) ;</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="selector-tag">X</span>旋转完<span class="selector-tag">-20</span>度，角度固定，然后是图形绕着<span class="selector-tag">Y</span>轴旋转360度。</span><br></pre></td></tr></table></figure>
+<h1 id="五-3D炫酷动画项目笔记"><a href="#五-3D炫酷动画项目笔记" class="headerlink" title="五.3D炫酷动画项目笔记"></a>五.3D炫酷动画项目笔记</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.旋转立方体</span><br><span class="line">前后面需要移动的是Z轴，前面向屏幕外走（垂直屏幕向外），后面的面起初也是垂直屏幕向外的，但是其要向后走，所以将其旋转180度，改变其方向垂直屏幕向内。这样前后面都沿着Z轴向自己的前方进行位移。</span><br><span class="line">上下两个面，上面的面沿着x旋转90度，向上走（旋转后，坐标轴是不变的，还是z轴垂直于面，所以依旧是沿着z轴的方向），下面的面旋转-90度向下走。</span><br><span class="line">左右面，沿着y轴旋转90度，</span><br><span class="line">先旋转后平移。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/31/css3_3/" data-id="cjshkatxc000tmggghbhq46u9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/08/js2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js进阶知识点总结2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/24/css3_2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS3笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/23/i/">i</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
