@@ -232,47 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/11/20/es6_1/" data-id="cjsijoew3001plcgg9mhizs1n" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/08/js2/" class="article-date">
-  <time datetime="2018-11-08T08:28:39.000Z" itemprop="datePublished">2018-11-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/js进阶2/">js进阶2</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/08/js2/">js进阶知识点总结2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/11/08/js2/" data-id="cjsijoe8v0005lcgg2zzdqxsp" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/11/20/es6_1/" data-id="cjsil4jb2001x88gg2tp8lzpr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,7 +249,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/js进阶1/">js进阶1</a>
+    <a class="article-category-link" href="/categories/js知识点总结/">js知识点总结</a>►<a class="article-category-link" href="/categories/js知识点总结/js进阶1/">js进阶1</a>
   </div>
 
   </div>
@@ -435,7 +395,7 @@
 <p><strong>形参实参数量必须一样多吗？</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    add(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"><span class="comment">//此时实参比形参多，就会忽略掉3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b，c</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"c"</span> = c);</span><br><span class="line">        <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">结果为<span class="literal">undefined</span>，<span class="number">3</span></span><br><span class="line"><span class="comment">//形参个数比实参个数多，形参声明了变量，但是并没有赋值。</span></span><br></pre></td></tr></table></figure>
 <p><strong>如何获取形参个数</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如何获取形参的个数    函数名<span class="selector-class">.length</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如何获取形参的个数    函数名.<span class="built_in">length</span></span><br></pre></td></tr></table></figure>
 <p><strong>如何获取实参个数</strong></p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="selector-class">.arguments</span> </span><br><span class="line">    仅在函数里面有</span><br><span class="line">    专为函数参数设计的对象</span><br><span class="line"><span class="number">2</span>.伪数组length 下标[]</span><br><span class="line">    实参的个数  argument.length</span><br><span class="line">    获取数组的值  argument[i]</span><br><span class="line"><span class="number">3</span><span class="selector-class">.callee</span>  指向函数自己的</span><br><span class="line">    Argument<span class="selector-class">.callee</span> 获取对象本身。</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"实参"</span> + <span class="built_in">arguments</span>.length);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"形参"</span> + add.length);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>]);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">1</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  add(<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
@@ -462,7 +422,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">f.call(obj,<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">age,name</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">this</span>.name = name;</span><br><span class="line">   <span class="keyword">this</span>.age = age;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> per =&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">f.call(per,<span class="number">20</span>,<span class="number">30</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="2-5-2-apply的使用"><a href="#2-5-2-apply的使用" class="headerlink" title="2.5.2 apply的使用"></a>2.5.2 apply的使用</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>.<span class="title">apply</span><span class="params">(obj,args)</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a,b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">f.call(obj,[<span class="number">2</span>,<span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">f.call(obj,[<span class="number">2</span>,<span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
 <h3 id="2-5-3-总结"><a href="#2-5-3-总结" class="headerlink" title="2.5.3 总结"></a>2.5.3 总结</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"结果是："</span>+(x+y)+<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  f1(<span class="number">10</span>,<span class="number">20</span>);<span class="comment">//结果是：30[object Window]</span></span><br><span class="line">  f1.apply();<span class="comment">//结果是：NaN[object Window]</span></span><br><span class="line">  f1.call();<span class="comment">//结果是：NaN[object Window]</span></span><br><span class="line">  f1.call(<span class="literal">null</span>);<span class="comment">//结果是：NaN[object Window]</span></span><br><span class="line">  f1.apply(<span class="literal">null</span>);<span class="comment">//结果是：NaN[object Window]</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">sex,age</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.sex+<span class="string">"你吃饭了 吗"</span>+<span class="keyword">this</span>.age);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Person.prototype.eat = function(sex,age)&#123;</span></span><br><span class="line">           </span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">sex,age</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.sex = sex;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> stu = <span class="keyword">new</span> Student(<span class="string">"男"</span>,<span class="number">180</span>);</span><br><span class="line">        Person.call(stu,<span class="string">"女"</span>,<span class="number">20</span>);</span><br><span class="line"><span class="comment">//结果是 男你吃饭了 吗180 </span></span><br><span class="line">解释：实例对象中有的，就直接使用实例对象中的。女，<span class="number">20</span>是给函数的值。在上一层。</span><br></pre></td></tr></table></figure>
 <p>给的参数是函数中需要的</p>
@@ -491,7 +451,127 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/11/08/js1/" data-id="cjsijoewi001rlcggjufs63n8" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/11/08/js1/" data-id="cjsil4jbl001z88ggtd9rtx2l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/08/js2/" class="article-date">
+  <time datetime="2018-11-08T08:28:39.000Z" itemprop="datePublished">2018-11-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js知识点总结/">js知识点总结</a>►<a class="article-category-link" href="/categories/js知识点总结/js进阶2/">js进阶2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/08/js2/">js进阶知识点总结2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本章节是紧接js1部分知识，部分知识点待更新</p>
+<h1 id="三、进阶JavaScript-三"><a href="#三、进阶JavaScript-三" class="headerlink" title="三、进阶JavaScript(三)"></a>三、进阶JavaScript(三)</h1><h2 id="3-1-递归函数"><a href="#3-1-递归函数" class="headerlink" title="3.1 递归函数"></a>3.1 递归函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n*f(n<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数自己调用了自己，需要有终止条件。</p>
+<p>思维：把复杂问题简单化。</p>
+<h2 id="3-2-闭包"><a href="#3-2-闭包" class="headerlink" title="3.2  闭包"></a>3.2  闭包</h2><h3 id="3-2-1-三要素"><a href="#3-2-1-三要素" class="headerlink" title="3.2.1 三要素"></a>3.2.1 三要素</h3><ol>
+<li>嵌套结构的函数</li>
+<li>内部函数访问了外部函数的变量</li>
+<li>在外部函数的外面调用内部函数</li>
+</ol>
+<h3 id="3-2-2-概念"><a href="#3-2-2-概念" class="headerlink" title="3.2.2 概念"></a>3.2.2 概念</h3><h3 id="3-2-3-常见错误"><a href="#3-2-3-常见错误" class="headerlink" title="3.2.3 常见错误"></a>3.2.3 常见错误</h3><h2 id="3-3-汉诺塔"><a href="#3-3-汉诺塔" class="headerlink" title="3.3 汉诺塔"></a>3.3 汉诺塔</h2><h2 id="3-4-什么是对象"><a href="#3-4-什么是对象" class="headerlink" title="3.4 什么是对象"></a>3.4 什么是对象</h2><h2 id="3-5-对象、构造函数、原型的关系"><a href="#3-5-对象、构造函数、原型的关系" class="headerlink" title="3.5 对象、构造函数、原型的关系"></a>3.5 对象、构造函数、原型的关系</h2><h2 id="3-6-原型、原型链、继承"><a href="#3-6-原型、原型链、继承" class="headerlink" title="3.6 原型、原型链、继承"></a>3.6 原型、原型链、继承</h2><h2 id="3-7-排队系统"><a href="#3-7-排队系统" class="headerlink" title="3.7 排队系统"></a>3.7 排队系统</h2><h2 id="3-8-对象属性的高级用法"><a href="#3-8-对象属性的高级用法" class="headerlink" title="3.8 对象属性的高级用法"></a>3.8 对象属性的高级用法</h2><h2 id="3-9-对象特性及克隆"><a href="#3-9-对象特性及克隆" class="headerlink" title="3.9 对象特性及克隆"></a>3.9 对象特性及克隆</h2><h2 id="练习：对象的深度克隆"><a href="#练习：对象的深度克隆" class="headerlink" title="练习：对象的深度克隆"></a>练习：对象的深度克隆</h2><h1 id="四、进阶JavaScript-四"><a href="#四、进阶JavaScript-四" class="headerlink" title="四、进阶JavaScript(四)"></a>四、进阶JavaScript(四)</h1><h2 id="4-1-数组详解"><a href="#4-1-数组详解" class="headerlink" title="4.1 数组详解"></a>4.1 数组详解</h2><h2 id="4-2-数组API"><a href="#4-2-数组API" class="headerlink" title="4.2 数组API"></a>4.2 数组API</h2><h2 id="4-3-数组去重"><a href="#4-3-数组去重" class="headerlink" title="4.3 数组去重"></a>4.3 数组去重</h2><h2 id="4-4-常见字符串处理需求"><a href="#4-4-常见字符串处理需求" class="headerlink" title="4.4 常见字符串处理需求"></a>4.4 常见字符串处理需求</h2><h3 id="4-4-1-字符串定义"><a href="#4-4-1-字符串定义" class="headerlink" title="4.4.1 字符串定义"></a>4.4.1 字符串定义</h3><p><strong>双引号  单引号</strong>   </p>
+<p>单引号中不能有单引号，双引号中不能有双引号。</p>
+<p><strong>转义字符</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">"aa\"aa"</span> ;<span class="comment">//外面的双引号定义字符串，里面的双引号会让浏览器产生歧义，所以转义字符就是将双引号转化为纯粹的字符。</span></span><br></pre></td></tr></table></figure>
+<p><strong>字符串直接量</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"aa'aa"</span>;</span><br><span class="line"><span class="keyword">var</span> s1 = <span class="string">"aaaa"</span>;</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="string">"aa\"aa"</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>字符串对象</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="built_in">String</span>(<span class="number">1</span>);<span class="comment">//输出结果就是"1";</span></span><br><span class="line">对象可以传多个参数<span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="built_in">String</span>(++n,n++,<span class="number">3</span>);<span class="comment">//只用第一个参数，这里输出的是2。而后面的n还是会正常的执行，输出的n为3。</span></span><br></pre></td></tr></table></figure>
+<p><strong>理解Unicode编码</strong></p>
+<p>Unicode编码是一本字典书，现在书写了17页了</p>
+<p>每一页：两个字节来存储 0x0000 - 0xFFFF</p>
+<p>早期ASCII  0x00-0xFF </p>
+<h3 id="4-4-2-字符串和编码之间转化"><a href="#4-4-2-字符串和编码之间转化" class="headerlink" title="4.4.2  字符串和编码之间转化"></a>4.4.2  字符串和编码之间转化</h3><p><strong>fromCharCode  </strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数字转化成字符</span><br><span class="line"><span class="built_in">String</span>.fromCharCode(<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>);<span class="comment">//注意使用方法</span></span><br></pre></td></tr></table></figure>
+<p><strong>charCodeAt</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字符串转化为数字的</span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"lknhuihaode！"</span>;</span><br><span class="line"><span class="keyword">var</span> s1 = s.charCodeAt(<span class="number">1</span>);<span class="comment">//括号内是数组的下标。</span></span><br></pre></td></tr></table></figure>
+<p><strong>字符比较大小</strong></p>
+<p>将字符转化为数字进行大小比较</p>
+<h3 id="4-4-3-字符串长度和字节长度"><a href="#4-4-3-字符串长度和字节长度" class="headerlink" title="4.4.3 字符串长度和字节长度"></a>4.4.3 字符串长度和字节长度</h3><p><strong>单字节和双字节</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"wujkl哈哈j"</span>;</span><br><span class="line"> <span class="keyword">var</span> len = s.length;</span><br><span class="line"> <span class="keyword">var</span> slen = <span class="number">0</span>;</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">     <span class="keyword">if</span>(s.charCodeAt(i) &gt; <span class="number">255</span>)&#123;</span><br><span class="line">         slen += <span class="number">2</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        slen += <span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//输出的slen的值为10。</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-4-4-字符串拼接"><a href="#4-4-4-字符串拼接" class="headerlink" title="4.4.4 字符串拼接"></a>4.4.4 字符串拼接</h3><p><strong>1.+号(推荐)</strong></p>
+<p><strong>2.concat</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">若要实现数字转换成字符串拼接的形式</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>; <span class="keyword">var</span> b = <span class="number">100</span>;<span class="comment">//想要实现100100</span></span><br><span class="line"><span class="keyword">var</span> c = a + <span class="string">""</span>  +b;<span class="comment">//隐士转换</span></span><br><span class="line">输出的就是<span class="number">100100</span>；</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-5-字符串查找"><a href="#4-4-5-字符串查找" class="headerlink" title="4.4.5 字符串查找"></a>4.4.5 字符串查找</h3><p><strong>1.charAt和charCodeAt是一对</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"happy birthday to you"</span>;</span><br><span class="line">s.charAt(<span class="number">1</span>）<span class="comment">//给字符串的下标，返回的是字符串，返回的是a</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.indexOf 和 lastIndexOf是一对</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"happy birthday to you"</span>;</span><br><span class="line">s.indexOf(<span class="string">"a"</span>)<span class="comment">//给定某个字符串，如果查找到了返回的是下标,返回数字1。查找不到的话就返回-1；</span></span><br><span class="line">存在多个同样的时候可以加一下其数值</span><br><span class="line">s.indexOf(<span class="string">"a"</span>,<span class="number">5</span>)，从数组下标为<span class="number">5</span>开始查找，返回的是<span class="number">12</span>。</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="string">"hh你真的hh"</span>;</span><br><span class="line">s1.indexOf(<span class="string">"hh"</span>)<span class="comment">//返回值是0，以第一个首字母的下标。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lastIndexOf是从后面向前面查找的。</span><br><span class="line"><span class="string">"hh你真的ghh"</span></span><br><span class="line">s1.lastIndexOf(<span class="string">"hh"</span>,<span class="number">-2</span>)<span class="comment">//当做0 向前查找  找到了 返回0</span></span><br><span class="line">s1.lastIndexOf(<span class="string">"hh"</span>,<span class="number">2</span>)<span class="comment">//返回的是0</span></span><br><span class="line">如何比较？</span><br><span class="line">hh你真的ghh</span><br><span class="line">	hh</span><br><span class="line">	<span class="comment">//将hh放在下标为2的位置上，向前移动作比较。如果合适就返回下标。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">只要是负数，都当做是<span class="number">0</span>来处理</span><br><span class="line">两者的区别就在于 一个是以下标向前查找（ lastIndexOf），一个是以下标向后查找（IndexOf）。</span><br></pre></td></tr></table></figure>
+<p>以上是给定的字符串</p>
+<p><strong>3.match</strong></p>
+<p><strong>4.search 注意正则表达式的使用</strong></p>
+<h3 id="4-4-6-字符串截取"><a href="#4-4-6-字符串截取" class="headerlink" title="4.4.6 字符串截取"></a>4.4.6 字符串截取</h3><p><strong>slice</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s = <span class="string">"hjkgfd"</span>;</span><br><span class="line">s.slice(<span class="number">1</span>,<span class="number">3</span>);<span class="comment">//输出结果为"jk"不包括3。</span></span><br></pre></td></tr></table></figure>
+<p><strong>substring</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s = <span class="string">"hjkgfd"</span>;</span><br><span class="line">s.substring(<span class="number">1</span>,<span class="number">3</span>);<span class="comment">//输出结果为"jk"不包括3.</span></span><br></pre></td></tr></table></figure>
+<p>区别：处理错误的时候。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.slice(<span class="number">3</span>,<span class="number">1</span>);<span class="comment">//返回的是空字符串</span></span><br><span class="line">s.substring(<span class="number">3</span>,<span class="number">1</span>);<span class="comment">//可以默认反过来，正常输出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slice 最大的好处支持负数。</span><br><span class="line">var s = <span class="string">"hjkgfdhjw"</span>;</span><br><span class="line">s.slice(<span class="number">3</span>，<span class="number">-1</span>);<span class="comment">//输出字符串gfdhj，-1就是最后一个字符，要注意开括号，是取不到最后一个的。</span></span><br><span class="line">s.substring(<span class="number">3</span>,<span class="number">-1</span>);<span class="comment">//输出字符串hjk，这里的负数就当做是0。取不到下标为3的字符。</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-4-7-字符串替换"><a href="#4-4-7-字符串替换" class="headerlink" title="4.4.7 字符串替换"></a>4.4.7 字符串替换</h3><p><strong>replace</strong></p>
+<h3 id="4-4-8-字符串和数组之间转化"><a href="#4-4-8-字符串和数组之间转化" class="headerlink" title="4.4.8 字符串和数组之间转化"></a>4.4.8 字符串和数组之间转化</h3><p>join 推荐</p>
+<p>split</p>
+<h3 id="4-4-9-字符串和数组之间的转换"><a href="#4-4-9-字符串和数组之间的转换" class="headerlink" title="4.4.9 字符串和数组之间的转换"></a>4.4.9 字符串和数组之间的转换</h3><p><strong>如何拼成字符串</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arry = [<span class="string">"ggg"</span>,<span class="string">"jjk"</span>,<span class="number">123</span>];</span><br><span class="line">arry.join(<span class="string">""</span>);<span class="comment">//输出结果为"gggjjk123"</span></span><br><span class="line">arry.join();<span class="comment">// "ggg,jjk,123" 默认为逗号隔开。</span></span><br></pre></td></tr></table></figure>
+<p><strong>如何拆开字符串</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'shjfgjd'</span>;</span><br><span class="line">s.split(<span class="string">""</span>);</span><br><span class="line">输出结果为 [<span class="string">"s"</span>, <span class="string">"h"</span>, <span class="string">"j"</span>, <span class="string">"f"</span>, <span class="string">"g"</span>, <span class="string">"j"</span>, <span class="string">"d"</span>]</span><br><span class="line">s = <span class="string">'shjfgjd hhhj llkh sshh uuuu'</span>;</span><br><span class="line">s.split(<span class="string">" "</span>);</span><br><span class="line">输出结果为[<span class="string">"shjfgjd"</span>, <span class="string">"hhhj"</span>, <span class="string">"llkh"</span>, <span class="string">"sshh"</span>, <span class="string">"uuuu"</span>]</span><br><span class="line">使用正则方式拆解</span><br><span class="line">s = <span class="string">"hhajh1hhhj9jkk0jhh"</span></span><br><span class="line">s.split(<span class="regexp">/\d+/</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-10-URL编码"><a href="#4-4-10-URL编码" class="headerlink" title="4.4.10 URL编码"></a>4.4.10 URL编码</h3><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">网址转换上的使用</span><br><span class="line"></span><br><span class="line"><span class="built_in">encodeURI</span>() 转换为编码</span><br><span class="line"></span><br><span class="line">decodeURL()反转回去</span><br><span class="line"></span><br><span class="line"><span class="built_in">encodeURIComponent</span>()   将https：<span class="comment">//www.xxx.com都转换成编码的形式。当wd中不仅仅是简单的字符，有特殊的字符时就需要使用它。</span></span><br><span class="line"></span><br><span class="line">例如 <span class="keyword">var</span> a = <span class="built_in">encodeURIComponent</span>(<span class="string">"http://"</span>);<span class="comment">//wd中的特殊字符。</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> <span class="built_in">url</span> = <span class="string">"http://tengxun.com/s?wd="</span> + a;</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-正则表达式"><a href="#4-2-正则表达式" class="headerlink" title="4.2 正则表达式"></a>4.2 正则表达式</h2><p>基础知识</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">正则表达式的组成：是由元字符或限定字符组成的一个式子</span><br><span class="line"> </span><br><span class="line">1. .表示的是除了\<span class="keyword">n</span>以外的任意的一个字符</span><br><span class="line"> </span><br><span class="line">2. []表示的是范围</span><br><span class="line"> </span><br><span class="line">- [0-9]表示的是0到9之间的任意的一个数字</span><br><span class="line">- [a-z]表示的是所有小写的字母中的任意的一个</span><br><span class="line">- [A-Z]表示的是所有的大写的字母中的任意的一个</span><br><span class="line">- [a-zA-Z]表示的是所有字母的任意一个</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">注：/[ab]/表示的是匹配a或者b，匹配了其中一个就是返回。</span><br><span class="line">3. []的另一个意义是把正则表达式中元字符的意义去掉</span><br><span class="line"> </span><br><span class="line">    例如：[.]这个点就没有什么意义了，就是一个点</span><br><span class="line"> </span><br><span class="line">4. |表示的是或者的意思</span><br><span class="line">	使用逻辑或的时候，建议使用（）</span><br><span class="line">	例如:./([0-9])([fbch])/；</span><br><span class="line">5. ()分组，提升优先级</span><br><span class="line"> </span><br><span class="line">6. *表示前面的表达式出现0次到多次</span><br><span class="line"> </span><br><span class="line">7. +表示的是前面的表达式出现了1次到多次</span><br><span class="line">    <span class="keyword">var</span> s = <span class="string">"hhkskhbdddhlkvbddhsiuehbdh"</span>;</span><br><span class="line"></span><br><span class="line">    s.<span class="built_in">match</span>(/ab+<span class="keyword">h</span>/<span class="keyword">g</span>)  <span class="keyword">g</span>表示全局匹配。</span><br><span class="line">    输出的就是bdddh bddh  bdh</span><br><span class="line"></span><br><span class="line">8. ？表示的是前面的表达式出现了0次到1次</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">9. 限定符：限定在前面的表达式出现的次数</span><br><span class="line">	&#123;2&#125; 就表示两个</span><br><span class="line"> </span><br><span class="line">   &#123;0，&#125; 0次到多次</span><br><span class="line"> </span><br><span class="line">   &#123;1,&#125;一次到多次</span><br><span class="line"> </span><br><span class="line">   &#123;0,1&#125;0次到一次</span><br><span class="line"> </span><br><span class="line">   &#123;5,10&#125;5次到10 次</span><br><span class="line">注意：贪婪模式，加上？ 变惰性模式</span><br><span class="line">例如 s = <span class="string">"hbbh hhhhth hhkkh  gggh hsadsh hkjjkh"</span></span><br><span class="line">	 s.<span class="built_in">match</span>(/<span class="keyword">h</span>.*<span class="keyword">h</span>/)</span><br><span class="line">	 输出的是<span class="string">"hbbh hhhhth hhkkh  gggh hsadsh hkjjkh"</span></span><br><span class="line">	 因为贪婪模式就是尽可能多的包裹。</span><br><span class="line">	 改成 s.<span class="built_in">match</span>(/<span class="keyword">h</span>.*？<span class="keyword">h</span>/)</span><br><span class="line"> 	[<span class="string">"hbbh"</span>, <span class="string">"hh"</span>, <span class="string">"hh"</span>, <span class="string">"h h"</span>, <span class="string">"hkkh"</span>, <span class="string">"h h"</span>, <span class="string">"h h"</span>]；</span><br><span class="line"> 注意：由于该匹配是从第一个字符开始的，因此在这里不考虑它的子串中更短的匹配。</span><br><span class="line"> 例如 s = <span class="string">"aaab"</span>;</span><br><span class="line"> 	 s.<span class="built_in">match</span>(/a+?b/);</span><br><span class="line"> 	 结果是：aaa   我们期望的是能匹配一个a和最后一个b。但实际上，这个模式却总是会寻找字符串中第一个可能匹配的位置。</span><br><span class="line">10. ^表示的是以开始或者是取反</span><br><span class="line">例如 /[^abc]/  表示的含义是，这个字符不能等于abc中的任意一个。 </span><br><span class="line">    </span><br><span class="line">    /[ a-z]/前面有空格会起作用的，会去找空格的。</span><br><span class="line">    </span><br><span class="line">    ^[0-9]以数字开头</span><br><span class="line"> </span><br><span class="line">11. $表示的是以什么为结束</span><br><span class="line"> </span><br><span class="line">    [0-9][a-z]$必须以小写字母为结束</span><br><span class="line">    ^[0-9][a-z]$  相当于严格模式，只能是“2a”类似于这种模式</span><br><span class="line"> </span><br><span class="line">12. \<span class="keyword">d</span> 表示的是数字中的任意一个，相当于[0-9]</span><br><span class="line"> </span><br><span class="line">13. \<span class="keyword">D</span> 表示的是非数字中的任意一个</span><br><span class="line"> </span><br><span class="line">14. \s表示的是空字符串中的一个</span><br><span class="line"> </span><br><span class="line">15. \S表示的是非空字符串的一个</span><br><span class="line"> </span><br><span class="line">16. \w表示的是任何ASCII字符组成的单词，等价于[A-Za-z0-9]</span><br><span class="line"> </span><br><span class="line">17. \W表示的是任何不是ASCII字符组成的单词，等价于[^A-Za-z0-9]</span><br><span class="line"> </span><br><span class="line">18. \b表示的是单词的边界</span><br><span class="line"> </span><br><span class="line">19. \"表示的是转义</span><br><span class="line"></span><br><span class="line">20. 声明量词：(?=<span class="keyword">as</span>) (?!<span class="keyword">as</span>)</span><br><span class="line"></span><br><span class="line">21.分组的效果 </span><br><span class="line">例如 <span class="keyword">var</span> s = <span class="string">" a=1,b=2,c=d"</span> <span class="comment">//一定要注意空格</span></span><br><span class="line">	s.<span class="built_in">match</span>(/\W+=\<span class="keyword">d</span>/<span class="keyword">g</span>)</span><br><span class="line">	结果是：[<span class="string">"a=1"</span>, <span class="string">"b=2"</span>]</span><br><span class="line">使用子表达式</span><br><span class="line">	s.<span class="built_in">match</span>(/(\w+)=(\<span class="keyword">d</span>+)/<span class="keyword">g</span>); </span><br><span class="line">	子表达式除了分组以外，前面的式子也会被执行，执行了三次运算。</span><br><span class="line">不希望值被存储</span><br><span class="line">？：</span><br><span class="line"></span><br><span class="line">	s.<span class="built_in">match</span>(/(?:\w+)=(?:\<span class="keyword">d</span>+)/<span class="keyword">g</span>); </span><br><span class="line">	</span><br><span class="line">22.引用</span><br><span class="line">通过  \1 \2的方式引用。</span><br><span class="line">    a = <span class="string">"a:b aa:jj kk:ll yy:oo"</span></span><br><span class="line">	a.<span class="built_in">match</span>(/\w+:\w+/<span class="keyword">g</span>)</span><br><span class="line">	输出结果是：[<span class="string">"a:b"</span>, <span class="string">"aa:jj"</span>, <span class="string">"kk:ll"</span>, <span class="string">"yy:oo"</span>]</span><br><span class="line">	a = <span class="string">"a:b aa:jj kk:ll yy:oo oo:yy"</span></span><br><span class="line">	a.<span class="built_in">match</span>(/(\w+):(\w+) \2:\1/<span class="keyword">g</span>)； <span class="comment">//这里\1 \2就表示左边起第一个括号  第二个括号。</span></span><br><span class="line">	输出的为   [<span class="string">"yy:oo oo:yy"</span>]</span><br><span class="line">23.| 选择，匹配的是该符号左边的子表达式或右边的子表达式。</span><br><span class="line">24. （）组合，将几个项组合为一个单元，这个单元可以通过* + ？ | 等符号加以修饰，而且可以i记住和这个组合相匹配的字符串以供此后的引用使用</span><br><span class="line">25. （?:）只组合，把项目组合到一个单元，但不记忆与该组匹配的字符。</span><br></pre></td></tr></table></figure>
+<h2 id="4-5-正则实战"><a href="#4-5-正则实战" class="headerlink" title="4.5 正则实战"></a>4.5 正则实战</h2><p><strong>RegEcp</strong></p>
+<p>exec 检索指定值，返回数组</p>
+<p>test  检索指定值，返回true或false</p>
+<p><strong>String</strong></p>
+<p>search 检索指定值，返回下标</p>
+<p>match 检索指定值，返回数组</p>
+<p>replace 替换指定值，返回数组</p>
+<p>split 分割字符串，返回数组</p>
+<h3 id="4-5-1-正则表达式作用"><a href="#4-5-1-正则表达式作用" class="headerlink" title="4.5.1 正则表达式作用"></a>4.5.1 正则表达式作用</h3><p><strong>1.验证字符串</strong></p>
+<p><strong>qq号的验证</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/[1-9][0-9]&#123;4,10&#125;/</span>;</span><br><span class="line"><span class="keyword">var</span> s = reg.test(<span class="string">"14562784040"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[1-9][0-9]&#123;4,10&#125;$/</span>;</span><br><span class="line">表示匹配一行。</span><br></pre></td></tr></table></figure>
+<p>[1-9]\d{5,10}</p>
+<p><strong>年龄验证</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//年龄验证 1-150</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^([1-9][0-9]?|1[0-4][0-9]|150)$/</span>;<span class="comment">//要使用小括号防止逻辑或产生混乱</span></span><br><span class="line">reg.test(<span class="number">150</span>);<span class="comment">//true</span></span><br><span class="line">reg.test(<span class="number">04</span>);<span class="comment">//false</span></span><br><span class="line">reg.test(<span class="string">"04"</span>);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p><strong>用户名判断</strong></p>
+<p>开头只能是字母，长度不超过10，字母和数字</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[A-Za-z][A-Za-z0-9]&#123;0,9&#125;$/</span>;</span><br><span class="line">或者</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[A-Za-z]\w&#123;0,9&#125;$/</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>邮箱地址</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用户名 字母   数字   -   .      \w+([-.]\w+)*</span><br><span class="line">@</span><br><span class="line">域名  字母  数字 - .        \w+([-.]\w+)*\.\w+([-.]\w+)*</span><br><span class="line"></span><br><span class="line">reg = <span class="regexp">/ ^\w+([-.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/</span></span><br><span class="line"></span><br><span class="line">.表示的是除了\n以外的任意的一个字符  想表示成单一的点意思  要使用\字符。</span><br></pre></td></tr></table></figure>
+<p><strong>2.查找字符串</strong></p>
+<p><strong>3 截取字符串</strong></p>
+<p><strong>4 替换字符串</strong></p>
+<h2 id="4-6-提取任意网址所有的参数"><a href="#4-6-提取任意网址所有的参数" class="headerlink" title="4.6 提取任意网址所有的参数"></a>4.6 提取任意网址所有的参数</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luokeni.github.io/2018/11/08/js2/" data-id="cjsil4is5000588ggnr676m7x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -569,7 +649,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/10/31/css3_3/" data-id="cjsijoej7000vlcggd6vitl4w" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/10/31/css3_3/" data-id="cjsil4iyn001388ggoqntsand" class="article-share-link">Share</a>
       
       
     </footer>
@@ -638,7 +718,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/10/24/css3_2/" data-id="cjsijodzt0000lcggmcfaqzzo" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/10/24/css3_2/" data-id="cjsil4imn000088ggz0oljkqf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -753,7 +833,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/10/16/css3_1/" data-id="cjsijoesr001alcgg9ap3elz6" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/10/16/css3_1/" data-id="cjsil4j5t001i88ggmcjopb62" class="article-share-link">Share</a>
       
       
     </footer>
@@ -874,7 +954,7 @@ maximumAge: 缓存有效时间，若为0则无条件重新获取新地理信息
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/10/11/html5_3/" data-id="cjsijoeju000wlcggzkihak70" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/10/11/html5_3/" data-id="cjsil4iyt001488ggr75rrumt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1002,7 +1082,7 @@ maximumAge: 缓存有效时间，若为0则无条件重新获取新地理信息
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/10/01/html5_2/" data-id="cjsijoesw001blcggktpilvlo" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/10/01/html5_2/" data-id="cjsil4j5z001j88ggsldx5c6m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1103,7 +1183,67 @@ maximumAge: 缓存有效时间，若为0则无条件重新获取新地理信息
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://luokeni.github.io/2018/09/26/html5_1/" data-id="cjsijoe1v0001lcggw3dcdkt3" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/09/26/html5_1/" data-id="cjsil4ip6000288ggot86jrps" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-原型及原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/10/原型及原型链/" class="article-date">
+  <time datetime="2018-09-10T08:28:39.000Z" itemprop="datePublished">2018-09-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/原型及原型链/">原型及原型链</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/10/原型及原型链/">原型知识点理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">什么是原型？</span><br><span class="line"><span class="number">1.</span>原型产生的原因</span><br><span class="line">	实例化其实是一个很耗费内存空间的，通过构造函数去实例对象的时候，每一个对象中的属性和方法都是在自己的空间，那么当有多个对象的时候，这些属性和方法就有多少个在各自的空间中存在在，所以很浪费空间，因此，为了解决这个问题，实现数据共享，原型就产生了。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>构造函数中有个proto<span class="keyword">type</span>，是原型，也是我们平时所使用的</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>而我么通过构造函数所实例化的对象中-<span class="type">Proto</span>-属性，这也是原型，是浏览器使用的，这个下划线原型指向的就是该实例对象中的构造函数中的proto<span class="keyword">type</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>如何访问的到函数中的proto<span class="keyword">type</span>呢？</span><br><span class="line"></span><br><span class="line">	实例对象.__proto__  这样就可以实现访问proto<span class="keyword">type</span>中的属性和方法啦</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name ;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'打球'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'cimei'</span>);</span><br><span class="line">p1.play();</span><br><span class="line"><span class="built_in">console</span>.dir(Person);<span class="comment">//查看构造函数的结构</span></span><br><span class="line"><span class="built_in">console</span>.dir(p1);<span class="comment">//查看实例对象的结构</span></span><br><span class="line"><span class="built_in">console</span>.log(p1.__proto__== Person.prototype)<span class="comment">//看他们的指向是否一致，此处结果是true</span></span><br></pre></td></tr></table></figure>
+<img src="/2018/09/10/原型及原型链/原型.png">
+<p>原型的指向问题</p>
+<p>构造函数中的this就是实例对象（谁调用的就是谁的）</p>
+<p>原型对象中的方法中的this就是实例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Person的构造函数</span></span><br><span class="line">	  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Person的原型对象上的方法</span></span><br><span class="line">        Person.prototype.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'打球'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Subject的构造函数</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">Subject</span>(<span class="params">age</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Subject的原型对象上的方法</span></span><br><span class="line"> 		Subject.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'今天吃饺子'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Subject的原型，指向了Person的实例对象</span></span><br><span class="line">        Subject.prototype = <span class="keyword">new</span> Person(<span class="string">'cimei'</span>);</span><br><span class="line">        <span class="keyword">var</span> sub = <span class="keyword">new</span> Subject(<span class="number">18</span>);</span><br><span class="line"><span class="comment">//此时发现可以调用Person原型上的方法</span></span><br><span class="line">        sub.play();</span><br><span class="line"><span class="comment">//此时会报错</span></span><br><span class="line">		sub.eat();</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/10/原型及原型链/原型2.png">
+<p>黑色线是真正的走向，红色的线是被改变了的，已经不存在了。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">总结：</span><br><span class="line">实例对象的原型__proto__指向的是该对象的构造函数的原型对象</span><br><span class="line"></span><br><span class="line">构造函数的原型对象proto<span class="keyword">type</span> 指向如果改变了，那么实例对象的原型__proto__指向自然也就会跟着改变</span><br><span class="line"></span><br><span class="line">原型链</span><br><span class="line"></span><br><span class="line">其实实例对象与构造函数并没有直接的关系，两者之间的关系就通过实例对象中的那个__proto__和原型对象（proto<span class="keyword">type</span>）来联系的。而我们也称之为原型链</span><br></pre></td></tr></table></figure>
+<p>原型指向改变的话如何添加方法并访问呢？</p>
+<p>1.如上述例子，改变了Subject的原型的指向，发现调用不了原来Subject原型上的方法了</p>
+<p>解决办法：可以在原型改变之后  再添加在其原型上添加方法。</p>
+<p>2.访问属性或方法</p>
+<p>说白了，就是就近原则，实例对象有的话，就直接用，实例对象上没有，就去原型对象上找。这里有个问题，就是如果找不到也不会报错，会返回一个undefined，因为js是一门动态类型的语言，对象没有的话，只要有点(.)，那么这个对象就有了这个东西，没有我们要的这个东西，只要有对象.属性这个名字，对象就有了这个属性，但是还没有给其赋值，所以是undefined的。总结就是js有立即创造属性的能力，大方的很，你没有，我就给你一个。</p>
+<p>封装：其实就是把一些相似的对象放在js文件按中</p>
+<p>继承：js中的继承是通过构造函数去模拟类，然后通过原型来实现的。其中原型实现了数据的共享，为我们节约了内存空间。</p>
+<p>属性的继承体现在构造函数的继承上,调用父类的构造函数使用call，apply,方法的继承就是prototype的指向问题了</p>
+<p>那么原型的作用也就有了两个：一是节约了内存空间，二是实现了继承</p>
+<p>多态：一个对象有不同的行为，或者是一个行为针对不同的对象，产生不同的结果，要想实现多态，就要先有继承</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luokeni.github.io/2018/09/10/原型及原型链/" data-id="cjsil4iuk000a88ggny24dqjj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1117,7 +1257,7 @@ maximumAge: 缓存有效时间，若为0则无条件重新获取新地理信息
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -1128,7 +1268,7 @@ maximumAge: 缓存有效时间，若为0则无条件重新获取新地理信息
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/">js知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js按需加载时间线/">js按需加载时间线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass知识点总结/">sass知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora总结/">typora总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型及原型链/">原型及原型链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -1143,7 +1283,7 @@ maximumAge: 缓存有效时间，若为0则无条件重新获取新地理信息
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li></ul>
     </div>
   </div>
 

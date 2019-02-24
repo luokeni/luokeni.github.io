@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="热爱技术，热爱生活">
+<meta property="og:type" content="website">
+<meta property="og:title" content="此梅的博客">
+<meta property="og:url" content="https://luokeni.github.io/page/3/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="热爱技术，热爱生活">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="此梅的博客">
+<meta name="twitter:description" content="热爱技术，热爱生活">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不忘初心</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="https://luokeni.github.io/luocimei/">项目主页</a>
+        
+          <a class="main-nav-link" href="https://github.com/luokeni/luocimei">gitHub</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luokeni.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-js时间加载线" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/19/js时间加载线/" class="article-date">
+  <time datetime="2018-08-19T08:28:39.000Z" itemprop="datePublished">2018-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js知识点总结/">js知识点总结</a>►<a class="article-category-link" href="/categories/js知识点总结/js按需加载时间线/">js按需加载时间线</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/19/js时间加载线/">js按需加载时间线</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、按需加载<br>    1.按需加载HTML<br>    2.按需加载图片<br>    3.按需加载js<br>2、js时间线<br>    1.创建Document对象，开始解析web页面，解析HTML元素和他们的文本内容后添加Element对象和Text节点到文档中。<br>这个阶段Document.readyState = “loading”。<br>    2.遇到link外部css，创建线程加载，并继续解析文档。<br>    3.遇到script外部js，并且没有设置async\defer ，浏览器加载，并阻塞，等待js加载完成并执行该脚本，然后继续解析文档<br>    4.遇到script外部js，并且设置有async\defer 浏览器创建线程加载，并继续解析文档，<br>    对于async属性的脚本，脚本加载完成后立即执行<br>    5.遇到img标签等，先正常解析dom结构，然后浏览器异步加载src，并继续解析文档<br>    6.当文档解析完成，document.readyState = “interactive”；<br>    7.文档解析完成后，所有设置有defer的脚本会按照顺序执行。<br>    8.当文档解析完成之后，document对象触发DOMContentLoaded事件，这也标志着程序执行从同步脚本执行阶段，转化为事件驱动阶段<br>    9.当所有async的脚本加载完成并执行后，img等加载完成后，document.readyState = “complete” window对象触发load事件<br>​    10.从此，页面以异步响应方式处理用户输入，网络事件等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luokeni.github.io/2018/08/19/js时间加载线/" data-id="cjsil4it7000788gg0v6qtwkh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-typora" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/10/typora/" class="article-date">
+  <time datetime="2018-08-10T08:28:39.000Z" itemprop="datePublished">2018-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/typora总结/">typora总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/typora/">typora总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-生成目录"><a href="#1-生成目录" class="headerlink" title="1.生成目录"></a>1.生成目录</h2><p>[TOC]按回车    如果你想输入整篇文章的目录，只需在相应的位置键入[TOC]，目录便会呈现，并且支持点击跳转。</p>
+<h2 id="2-代码编辑块"><a href="#2-代码编辑块" class="headerlink" title="2.代码编辑块"></a>2.代码编辑块</h2><p> 三个点 + 回车键，三个点是左上角那个点（英文下）</p>
+<p>设置代码块的颜色：<a href>https://jingyan.baidu.com/article/db55b609c807b04ba30a2fc7.html</a></p>
+<p> 代码区的右下角，在选择语言区域输入JavaScript</p>
+<h2 id="3-标题"><a href="#3-标题" class="headerlink" title="3.标题"></a>3.标题</h2><p>在Typora中，只需按快捷键Ctrl+1，Ctrl+2，……，Ctrl+6<br>就可以依次输入一级到六级标题——标题的格式会立刻显现，并且在左端Outline窗口中出现，<br>在一篇文章的结构排好后，你当然可以在Outline窗口点击相应的标题进行跳转。</p>
+<h2 id="4-文字格式"><a href="#4-文字格式" class="headerlink" title="4.文字格式"></a>4.文字格式</h2><p>加粗：ctrl+b<br>倾斜：ctrl+i<br>下划线：ctrl+u<br>居中对齐：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>要居中的文字<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-列表"><a href="#5-列表" class="headerlink" title="5.列表"></a>5.列表</h2><p>无序列表：输入-之后输入空格<br>有序列表：输入数字+“.”之后输入空格   例如（2.）<br>任务列表：-[空格]空格 文字</p>
+<h2 id="6-引用"><a href="#6-引用" class="headerlink" title="6.引用"></a>6.引用</h2><p>  输入&gt;之后输入空格</p>
+<h2 id="7-表格"><a href="#7-表格" class="headerlink" title="7.表格"></a>7.表格</h2><pre><code>表格：ctrl+t
+</code></pre><h2 id="8-选中一整行"><a href="#8-选中一整行" class="headerlink" title="8.选中一整行"></a>8.选中一整行</h2><p>ctrl+l</p>
+<h2 id="9-选中单词"><a href="#9-选中单词" class="headerlink" title="9.选中单词"></a>9.选中单词</h2><p>ctrl+d</p>
+<h2 id="10-选中相同格式的文字"><a href="#10-选中相同格式的文字" class="headerlink" title="10.选中相同格式的文字"></a>10.选中相同格式的文字</h2><p>ctrl+e</p>
+<h2 id="11-跳转到文章开头"><a href="#11-跳转到文章开头" class="headerlink" title="11.跳转到文章开头"></a>11.跳转到文章开头</h2><p>ctrl+home</p>
+<h2 id="12-跳转到文章结尾"><a href="#12-跳转到文章结尾" class="headerlink" title="12.跳转到文章结尾"></a>12.跳转到文章结尾</h2><p>ctrl+end</p>
+<h2 id="13-搜索"><a href="#13-搜索" class="headerlink" title="13.搜索"></a>13.搜索</h2><p>ctrl+f</p>
+<h2 id="14-替换"><a href="#14-替换" class="headerlink" title="14.替换"></a>14.替换</h2><p>ctrl+h</p>
+<h2 id="15-删除线"><a href="#15-删除线" class="headerlink" title="15.删除线"></a>15.删除线</h2><p>alt+shift+5</p>
+<h2 id="16-插入图片"><a href="#16-插入图片" class="headerlink" title="16.插入图片"></a>16.插入图片</h2><p>直接拖动到指定位置即可或者ctrl+shift+i</p>
+<h2 id="17-插入链接"><a href="#17-插入链接" class="headerlink" title="17.插入链接"></a>17.插入链接</h2><p>ctrl+k</p>
+<h2 id="18-分割线"><a href="#18-分割线" class="headerlink" title="18.分割线"></a>18.分割线</h2><p>在新的一行输入3个-(中文字体下的)或者三个_（英文字体下的） 或者三个*</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luokeni.github.io/2018/08/10/typora/" data-id="cjsilp4290000loggd1fmdtq2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/">js知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js按需加载时间线/">js按需加载时间线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass知识点总结/">sass知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora总结/">typora总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型及原型链/">原型及原型链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络知识_2/">网络基础总结2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="https://luokeni.github.io/luocimei/" class="mobile-nav-link">项目主页</a>
+  
+    <a href="https://github.com/luokeni/luocimei" class="mobile-nav-link">gitHub</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

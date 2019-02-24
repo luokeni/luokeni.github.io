@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>原型知识点理解 | 此梅的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1234567891011什么是原型？1.原型产生的原因	实例化其实是一个很耗费内存空间的，通过构造函数去实例对象的时候，每一个对象中的属性和方法都是在自己的空间，那么当有多个对象的时候，这些属性和方法就有多少个在各自的空间中存在在，所以很浪费空间，因此，为了解决这个问题，实现数据共享，原型就产生了。2.构造函数中有个prototype，是原型，也是我们平时所使用的3.而我么通过构造函数所实例化的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型知识点理解">
+<meta property="og:url" content="https://luokeni.github.io/2018/09/10/原型及原型链/index.html">
+<meta property="og:site_name" content="此梅的博客">
+<meta property="og:description" content="1234567891011什么是原型？1.原型产生的原因	实例化其实是一个很耗费内存空间的，通过构造函数去实例对象的时候，每一个对象中的属性和方法都是在自己的空间，那么当有多个对象的时候，这些属性和方法就有多少个在各自的空间中存在在，所以很浪费空间，因此，为了解决这个问题，实现数据共享，原型就产生了。2.构造函数中有个prototype，是原型，也是我们平时所使用的3.而我么通过构造函数所实例化的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://luokeni.github.io/2018/09/10/原型及原型链/原型.png">
+<meta property="og:image" content="https://luokeni.github.io/2018/09/10/原型及原型链/原型2.png">
+<meta property="og:updated_time" content="2019-02-24T07:23:20.721Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原型知识点理解">
+<meta name="twitter:description" content="1234567891011什么是原型？1.原型产生的原因	实例化其实是一个很耗费内存空间的，通过构造函数去实例对象的时候，每一个对象中的属性和方法都是在自己的空间，那么当有多个对象的时候，这些属性和方法就有多少个在各自的空间中存在在，所以很浪费空间，因此，为了解决这个问题，实现数据共享，原型就产生了。2.构造函数中有个prototype，是原型，也是我们平时所使用的3.而我么通过构造函数所实例化的">
+<meta name="twitter:image" content="https://luokeni.github.io/2018/09/10/原型及原型链/原型.png">
+  
+    <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">此梅的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不忘初心</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="https://luokeni.github.io/luocimei/">项目主页</a>
+        
+          <a class="main-nav-link" href="https://github.com/luokeni/luocimei">gitHub</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luokeni.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-原型及原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/10/原型及原型链/" class="article-date">
+  <time datetime="2018-09-10T08:28:39.000Z" itemprop="datePublished">2018-09-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/原型及原型链/">原型及原型链</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原型知识点理解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">什么是原型？</span><br><span class="line"><span class="number">1.</span>原型产生的原因</span><br><span class="line">	实例化其实是一个很耗费内存空间的，通过构造函数去实例对象的时候，每一个对象中的属性和方法都是在自己的空间，那么当有多个对象的时候，这些属性和方法就有多少个在各自的空间中存在在，所以很浪费空间，因此，为了解决这个问题，实现数据共享，原型就产生了。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>构造函数中有个proto<span class="keyword">type</span>，是原型，也是我们平时所使用的</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>而我么通过构造函数所实例化的对象中-<span class="type">Proto</span>-属性，这也是原型，是浏览器使用的，这个下划线原型指向的就是该实例对象中的构造函数中的proto<span class="keyword">type</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>如何访问的到函数中的proto<span class="keyword">type</span>呢？</span><br><span class="line"></span><br><span class="line">	实例对象.__proto__  这样就可以实现访问proto<span class="keyword">type</span>中的属性和方法啦</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name ;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'打球'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'cimei'</span>);</span><br><span class="line">p1.play();</span><br><span class="line"><span class="built_in">console</span>.dir(Person);<span class="comment">//查看构造函数的结构</span></span><br><span class="line"><span class="built_in">console</span>.dir(p1);<span class="comment">//查看实例对象的结构</span></span><br><span class="line"><span class="built_in">console</span>.log(p1.__proto__== Person.prototype)<span class="comment">//看他们的指向是否一致，此处结果是true</span></span><br></pre></td></tr></table></figure>
+<img src="/2018/09/10/原型及原型链/原型.png">
+<p>原型的指向问题</p>
+<p>构造函数中的this就是实例对象（谁调用的就是谁的）</p>
+<p>原型对象中的方法中的this就是实例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Person的构造函数</span></span><br><span class="line">	  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Person的原型对象上的方法</span></span><br><span class="line">        Person.prototype.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'打球'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Subject的构造函数</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">Subject</span>(<span class="params">age</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Subject的原型对象上的方法</span></span><br><span class="line"> 		Subject.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'今天吃饺子'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//Subject的原型，指向了Person的实例对象</span></span><br><span class="line">        Subject.prototype = <span class="keyword">new</span> Person(<span class="string">'cimei'</span>);</span><br><span class="line">        <span class="keyword">var</span> sub = <span class="keyword">new</span> Subject(<span class="number">18</span>);</span><br><span class="line"><span class="comment">//此时发现可以调用Person原型上的方法</span></span><br><span class="line">        sub.play();</span><br><span class="line"><span class="comment">//此时会报错</span></span><br><span class="line">		sub.eat();</span><br></pre></td></tr></table></figure>
+<img src="/2018/09/10/原型及原型链/原型2.png">
+<p>黑色线是真正的走向，红色的线是被改变了的，已经不存在了。</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">总结：</span><br><span class="line">实例对象的原型__proto__指向的是该对象的构造函数的原型对象</span><br><span class="line"></span><br><span class="line">构造函数的原型对象proto<span class="keyword">type</span> 指向如果改变了，那么实例对象的原型__proto__指向自然也就会跟着改变</span><br><span class="line"></span><br><span class="line">原型链</span><br><span class="line"></span><br><span class="line">其实实例对象与构造函数并没有直接的关系，两者之间的关系就通过实例对象中的那个__proto__和原型对象（proto<span class="keyword">type</span>）来联系的。而我们也称之为原型链</span><br></pre></td></tr></table></figure>
+<p>原型指向改变的话如何添加方法并访问呢？</p>
+<p>1.如上述例子，改变了Subject的原型的指向，发现调用不了原来Subject原型上的方法了</p>
+<p>解决办法：可以在原型改变之后  再添加在其原型上添加方法。</p>
+<p>2.访问属性或方法</p>
+<p>说白了，就是就近原则，实例对象有的话，就直接用，实例对象上没有，就去原型对象上找。这里有个问题，就是如果找不到也不会报错，会返回一个undefined，因为js是一门动态类型的语言，对象没有的话，只要有点(.)，那么这个对象就有了这个东西，没有我们要的这个东西，只要有对象.属性这个名字，对象就有了这个属性，但是还没有给其赋值，所以是undefined的。总结就是js有立即创造属性的能力，大方的很，你没有，我就给你一个。</p>
+<p>封装：其实就是把一些相似的对象放在js文件按中</p>
+<p>继承：js中的继承是通过构造函数去模拟类，然后通过原型来实现的。其中原型实现了数据的共享，为我们节约了内存空间。</p>
+<p>属性的继承体现在构造函数的继承上,调用父类的构造函数使用call，apply,方法的继承就是prototype的指向问题了</p>
+<p>那么原型的作用也就有了两个：一是节约了内存空间，二是实现了继承</p>
+<p>多态：一个对象有不同的行为，或者是一个行为针对不同的对象，产生不同的结果，要想实现多态，就要先有继承</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luokeni.github.io/2018/09/10/原型及原型链/" data-id="cjsil4iuk000a88ggny24dqjj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/26/html5_1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTML5笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/19/js时间加载线/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js按需加载时间线</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/">js知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js按需加载时间线/">js按需加载时间线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js知识点总结/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass知识点总结/">sass知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora总结/">typora总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/原型及原型链/">原型及原型链</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/git使用总结/">git使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/10/webpack工程化/">webpack使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络知识_2/">网络基础总结2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 罗此梅（老小孩）<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="https://luokeni.github.io/luocimei/" class="mobile-nav-link">项目主页</a>
+  
+    <a href="https://github.com/luokeni/luocimei" class="mobile-nav-link">gitHub</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
