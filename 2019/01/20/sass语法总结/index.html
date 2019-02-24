@@ -10,17 +10,17 @@
   <meta name="description" content="第一部分：sass的基础语法1.1 sass和css之间的区别css:没有封装，没有变量，没有组合，原生的模块化语法不好用 sass：有变量，有组合，有封装，容易结合到已有的工具中 1.2 sass的使用和安装两种后缀 使用.scss 安装sass 1npm install -g sass//安装在全局下 sass ./src/sass/index.scss dist/index.css sass">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sass语法总结笔记">
-<meta property="og:url" content="http://yoursite.com/2019/01/20/sass语法总结/index.html">
+<meta property="og:url" content="https://luokeni.github.io/2019/01/20/sass语法总结/index.html">
 <meta property="og:site_name" content="此梅的博客">
 <meta property="og:description" content="第一部分：sass的基础语法1.1 sass和css之间的区别css:没有封装，没有变量，没有组合，原生的模块化语法不好用 sass：有变量，有组合，有封装，容易结合到已有的工具中 1.2 sass的使用和安装两种后缀 使用.scss 安装sass 1npm install -g sass//安装在全局下 sass ./src/sass/index.scss dist/index.css sass">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/01/20/sass语法总结/笔记图片/sass1.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/01/20/sass语法总结/笔记图片/sass2.jpg">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://luokeni.github.io/2019/01/20/sass语法总结/笔记图片/sass1.jpg">
+<meta property="og:image" content="https://luokeni.github.io/2019/01/20/sass语法总结/笔记图片/sass2.jpg">
 <meta property="og:updated_time" content="2019-02-23T14:27:44.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sass语法总结笔记">
 <meta name="twitter:description" content="第一部分：sass的基础语法1.1 sass和css之间的区别css:没有封装，没有变量，没有组合，原生的模块化语法不好用 sass：有变量，有组合，有封装，容易结合到已有的工具中 1.2 sass的使用和安装两种后缀 使用.scss 安装sass 1npm install -g sass//安装在全局下 sass ./src/sass/index.scss dist/index.css sass">
-<meta name="twitter:image" content="http://yoursite.com/2019/01/20/sass语法总结/笔记图片/sass1.jpg">
+<meta name="twitter:image" content="https://luokeni.github.io/2019/01/20/sass语法总结/笔记图片/sass1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
   
@@ -44,24 +44,28 @@
         <a href="/" id="logo">此梅的博客</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不忘初心</a>
+        </h2>
+      
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="https://luokeni.github.io/luocimei/">项目主页</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="https://github.com/luokeni/luocimei">gitHub</a>
         
       </nav>
       <nav id="sub-nav">
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luokeni.github.io"></form>
       </div>
     </div>
   </div>
@@ -154,7 +158,7 @@ lists数据类型，可以保存很多数据；用逗号或者空格隔开；
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/20/sass语法总结/" data-id="cjshlyswy000888ggxbkcu2cd" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2019/01/20/sass语法总结/" data-id="cjsiggklf000an4ggut5iwukb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,15 +166,6 @@ lists数据类型，可以保存很多数据；用逗号或者空格隔开；
   
     
 <nav id="article-nav">
-  
-    <a href="/2019/02/23/i/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          i
-        
-      </div>
-    </a>
   
   
     <a href="/2019/01/15/git使用总结/" id="article-nav-older" class="article-nav-link-wrap">
@@ -189,7 +184,7 @@ lists数据类型，可以保存很多数据；用逗号或者空格隔开；
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
     </div>
@@ -204,9 +199,9 @@ lists数据类型，可以保存很多数据；用逗号或者空格隔开；
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
     </div>
   </div>
 
@@ -214,13 +209,9 @@ lists数据类型，可以保存很多数据；用逗号或者空格隔开；
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2019/02/23/i/">i</a>
-          </li>
         
           <li>
             <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
@@ -236,6 +227,10 @@ lists数据类型，可以保存很多数据；用逗号或者空格隔开；
         
           <li>
             <a href="/2018/12/31/网络知识_2/">网络基础总结2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
           </li>
         
       </ul>
@@ -258,9 +253,9 @@ lists数据类型，可以保存很多数据；用逗号或者空格隔开；
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="https://luokeni.github.io/luocimei/" class="mobile-nav-link">项目主页</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="https://github.com/luokeni/luocimei" class="mobile-nav-link">gitHub</a>
   
 </nav>
     

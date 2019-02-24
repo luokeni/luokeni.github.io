@@ -10,20 +10,20 @@
   <meta name="description" content="一.JavaScript进阶（一）1.1 JS引入及阻塞加载1.引入js的两种方式(1).嵌入代码块 (2).引入外部文件 注：可以有多个代码块，先下载，后解析，再执行（多个js代码块按照从上往下执行） 2.存在的问题为啥加载慢？为什么获取不到dom元素？ 12345678910111213&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js进阶知识点总结1">
-<meta property="og:url" content="http://yoursite.com/2018/11/08/js1/index.html">
+<meta property="og:url" content="https://luokeni.github.io/2018/11/08/js1/index.html">
 <meta property="og:site_name" content="此梅的博客">
 <meta property="og:description" content="一.JavaScript进阶（一）1.1 JS引入及阻塞加载1.引入js的两种方式(1).嵌入代码块 (2).引入外部文件 注：可以有多个代码块，先下载，后解析，再执行（多个js代码块按照从上往下执行） 2.存在的问题为啥加载慢？为什么获取不到dom元素？ 12345678910111213&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/11/08/js1/js1.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/08/js1/js2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/11/08/js1/js4.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/08/js1/js5.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/08/js1/js5.jpg">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://luokeni.github.io/2018/11/08/js1/js1.png">
+<meta property="og:image" content="https://luokeni.github.io/2018/11/08/js1/js2.jpg">
+<meta property="og:image" content="https://luokeni.github.io/2018/11/08/js1/js4.png">
+<meta property="og:image" content="https://luokeni.github.io/2018/11/08/js1/js5.png">
+<meta property="og:image" content="https://luokeni.github.io/2018/11/08/js1/js5.jpg">
 <meta property="og:updated_time" content="2019-02-23T11:17:39.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js进阶知识点总结1">
 <meta name="twitter:description" content="一.JavaScript进阶（一）1.1 JS引入及阻塞加载1.引入js的两种方式(1).嵌入代码块 (2).引入外部文件 注：可以有多个代码块，先下载，后解析，再执行（多个js代码块按照从上往下执行） 2.存在的问题为啥加载慢？为什么获取不到dom元素？ 12345678910111213&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/08/js1/js1.png">
+<meta name="twitter:image" content="https://luokeni.github.io/2018/11/08/js1/js1.png">
   
     <link rel="alternate" href="/atom.xml" title="此梅的博客" type="application/atom+xml">
   
@@ -47,24 +47,28 @@
         <a href="/" id="logo">此梅的博客</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不忘初心</a>
+        </h2>
+      
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="https://luokeni.github.io/luocimei/">项目主页</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="https://github.com/luokeni/luocimei">gitHub</a>
         
       </nav>
       <nav id="sub-nav">
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luokeni.github.io"></form>
       </div>
     </div>
   </div>
@@ -279,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/08/js1/" data-id="cjshlytkq001r88gg0t9w207m" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2018/11/08/js1/" data-id="cjsiggl3z001yn4gg2nk76j4x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +318,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
     </div>
@@ -329,9 +333,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
     </div>
   </div>
 
@@ -339,13 +343,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2019/02/23/i/">i</a>
-          </li>
         
           <li>
             <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
@@ -361,6 +361,10 @@
         
           <li>
             <a href="/2018/12/31/网络知识_2/">网络基础总结2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
           </li>
         
       </ul>
@@ -383,9 +387,9 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="https://luokeni.github.io/luocimei/" class="mobile-nav-link">项目主页</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="https://github.com/luokeni/luocimei" class="mobile-nav-link">gitHub</a>
   
 </nav>
     

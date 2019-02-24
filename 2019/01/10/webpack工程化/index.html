@@ -10,10 +10,10 @@
   <meta name="description" content="一 什么是模块化当js的代码量越来越大的时候，没有模块化就是一个缺陷。 直白的说：就是打包。弥补ES5没有模块化的缺陷。 不用模块化：  可读性很差 函数之间有关联性，改变一个，其他的也要变 便于开发（每个人开发的时候把自己的可以防止冲突，通过暴露一个方法就可以） script标签多的时候，会引起性能问题 作用域问题，会共享全局作用域，可能会污染全局变量  1.1 模块化第一步IIFE ,立即执行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack使用总结">
-<meta property="og:url" content="http://yoursite.com/2019/01/10/webpack工程化/index.html">
+<meta property="og:url" content="https://luokeni.github.io/2019/01/10/webpack工程化/index.html">
 <meta property="og:site_name" content="此梅的博客">
 <meta property="og:description" content="一 什么是模块化当js的代码量越来越大的时候，没有模块化就是一个缺陷。 直白的说：就是打包。弥补ES5没有模块化的缺陷。 不用模块化：  可读性很差 函数之间有关联性，改变一个，其他的也要变 便于开发（每个人开发的时候把自己的可以防止冲突，通过暴露一个方法就可以） script标签多的时候，会引起性能问题 作用域问题，会共享全局作用域，可能会污染全局变量  1.1 模块化第一步IIFE ,立即执行">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-02-23T14:05:08.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack使用总结">
@@ -41,24 +41,28 @@
         <a href="/" id="logo">此梅的博客</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不忘初心</a>
+        </h2>
+      
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="https://luokeni.github.io/luocimei/">项目主页</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="https://github.com/luokeni/luocimei">gitHub</a>
         
       </nav>
       <nav id="sub-nav">
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luokeni.github.io"></form>
       </div>
     </div>
   </div>
@@ -313,7 +317,7 @@ npm -v 检查npm版本
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/10/webpack工程化/" data-id="cjshlytga001f88ggojy6mhal" class="article-share-link">Share</a>
+      <a data-url="https://luokeni.github.io/2019/01/10/webpack工程化/" data-id="cjsiggkyd001mn4gg4hfudvy5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +352,7 @@ npm -v 检查npm版本
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git使用总结/"> git使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结1/">CSS3知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结2/">CSS3知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/CSS3知识总结3/">CSS3知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记1/">ES6基础知识笔记1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/ES6基础知识笔记2/">ES6基础知识笔记2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结1/">HTML5知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结2/">HTML5知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/HTML5知识总结3/">HTML5知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/">jQuery知识点笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结1/">jQuery知识总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结2/">jQuery知识总结2</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery知识点笔记/jQuery知识总结3/">jQuery知识总结3</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶1/">js进阶1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/js进阶2/">js进阶2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/this指向知识点总结/">this指向知识点总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack使用总结/">webpack使用总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/">网络知识点总结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结1/"> 网络基础总结1</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络知识点总结/网络基础总结2/"> 网络基础总结2</a></li></ul></li></ul>
     </div>
@@ -363,9 +367,9 @@ npm -v 检查npm版本
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
     </div>
   </div>
 
@@ -373,13 +377,9 @@ npm -v 检查npm版本
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2019/02/23/i/">i</a>
-          </li>
         
           <li>
             <a href="/2019/01/20/sass语法总结/">sass语法总结笔记</a>
@@ -395,6 +395,10 @@ npm -v 检查npm版本
         
           <li>
             <a href="/2018/12/31/网络知识_2/">网络基础总结2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/网络基础_1/">网络基础总结1</a>
           </li>
         
       </ul>
@@ -417,9 +421,9 @@ npm -v 检查npm版本
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="https://luokeni.github.io/luocimei/" class="mobile-nav-link">项目主页</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="https://github.com/luokeni/luocimei" class="mobile-nav-link">gitHub</a>
   
 </nav>
     
