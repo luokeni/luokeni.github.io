@@ -366,7 +366,7 @@ body {
 #subtitle {
   text-decoration: none;
   color: #fff;
-  font-weight: 300;
+  font-weight: 500;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 #logo {
@@ -415,7 +415,8 @@ body {
   cursor: pointer;
 }
 .main-nav-link {
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 16px;
   letter-spacing: 1px;
 }
 @media screen and (max-width: 479px) {
@@ -437,12 +438,6 @@ body {
 #sub-nav {
   float: right;
   margin-right: -15px;
-}
-#nav-rss-link:before {
-  content: "\f09e";
-}
-#nav-search-btn:before {
-  content: "\f002";
 }
 #search-form-wrap {
   position: absolute;
